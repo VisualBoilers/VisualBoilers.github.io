@@ -1,0 +1,56 @@
+h1{
+  width:1000px;
+  text-align:center;
+  font-family:'BebasNeueRegular', 'Helvetica Neue', arial, sans-serif;
+}
+div#header{
+  margin-bottom:30px;
+  margin-top:20px;
+  border-bottom:1px solid #999;
+}
+div#intro{
+  align:center;
+  width:1000px;
+}
+div.members{
+  width:300px;
+  height:250px;
+  float:left;
+  background-color:#F4F6F7;
+  padding:10px;
+  margin:5px;
+}
+img{
+  width:100px;
+  height:100px;
+  float:left;
+  margin-left:10px;
+}
+div.about{
+  display:inline;
+}
+p.name{
+  width:170px;
+  font-size:20px;
+  font-weight:bold;
+  margin:10px;
+  float:left;
+}
+p{
+  font-family:'BebasNeueRegular', 'Helvetica Neue', arial, sans-serif;
+}
+p.major{
+  width:170px;
+  font-size:20px;
+  margin:10px;
+  float:left;
+}
+p.about{
+  width:250px;
+  font-size:18px;
+  margin:10px;
+  float:left;
+}
+.clear{
+  clear:both;
+}
