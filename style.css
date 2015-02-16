@@ -76,3 +76,6 @@ padding: 10px;
 tr:nth-child(odd){
 background-color:#efefef;
 }
+.why{
+	width:60px;
+	}
