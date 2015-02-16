@@ -58,6 +58,7 @@ p.about{
   clear:both;
 }
 table {
+width:1200px;
 padding: 10px;
 margin: auto;
 border: 0;
@@ -76,6 +77,3 @@ padding: 10px;
 tr:nth-child(odd){
 background-color:#efefef;
 }
-.why{
-	width:60px;
-	}
