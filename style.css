@@ -42,6 +42,15 @@ p.name{
 p{
   font-family:'BebasNeueRegular', 'Helvetica Neue', arial, sans-serif;
 }
+p#hw3{
+  width:1000px;
+  margin: auto;
+  margin-bottom:30px;
+  margin-top:30px;
+  font-family:'BebasNeueRegular', 'Helvetica Neue', arial, sans-serif;
+  text-align: center;
+  font-size:20px;
+}
 p.major{
   width:170px;
   font-size:20px;
