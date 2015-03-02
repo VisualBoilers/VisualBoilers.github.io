@@ -9,13 +9,15 @@ border-bottom:1px solid #999;
 }
 p {
 margin: auto;
-text-align: center;
 width:1000px;
-margin-bottom: 20px;
-margin-top: 20px;
-font-family: 'BebasNeueRegular', 'Helvetica Neue', arial, sans-serif;
-background-color:#F4F6F7;
+margin-bottom: 10px;
+margin-top: 10px;
+
 }
 div {
 margin: 0 auto;
+}
+div.desciption{
+  background-color:#F4F6F7;
+  font-family: 'BebasNeueRegular', 'Helvetica Neue', arial, sans-serif;
 }
