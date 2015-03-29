@@ -41,5 +41,28 @@ var clk = function(id){
         .text(function(d) { return d.vdata; });
 
 }
+var data1 = d3.json("newdata.json", function(data) {
 
-var data1 = d3.csv(data/v1data.csv);
+	var firstname = "Afghanistan";
+	var amount = 0;
+	
+	data.forEach(function(d){
+		if(d[2] === firstname) {
+			amount = amount + d[6];
+			//console.log(amount);
+			//console.log(firstname);
+		}
+		else {
+		var countries = "#"+firstname;
+		d3.selectAll(countries)
+		.style("fill", "blue")
+		.style("opacity", amount)
+		.on("click",function(){
+		return clk(this);
+		});
+		firstname = d[2];
+		amount = d[6];	
+}
+});
+});
+
