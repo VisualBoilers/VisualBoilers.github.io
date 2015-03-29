@@ -149,7 +149,7 @@
 				},
 				{
 					"id":"CI",
-					"title":"Côte d'Ivoire",
+					"title":"Ivory Coast",
 					"d":"M467.24,449.46L465.97,449.49L464.01,448.94L462.22,448.97L458.89,449.46L456.95,450.27L454.17,451.29L453.63,451.22L453.84,448.92L454.11,448.57L454.03,447.46L452.84,446.29L451.95,446.1L451.13,445.33L451.74,444.09L451.46,442.73L451.59,441.91L452.04,441.91L452.2,440.68L451.98,440.14L452.25,439.75L453.29,439.41L452.6,437.15L451.95,435.99L452.18,435.02L452.74,434.81L453.1,434.55L453.88,434.97L456.04,435L456.56,434.17L457.04,434.23L457.85,433.91L458.29,435.12L458.94,434.76L460.1,434.34L461.36,434.96L461.85,435.89L463.11,436.49L464.09,435.78L465.41,435.67L467.33,436.4L468.07,440.41L466.89,442.77L466.16,445.94L467.37,448.35z"
 				},
 				{
@@ -888,7 +888,7 @@
 
 			Country.draw = function(id){
 					d3.select(id).selectAll(".country")
-						.data(CounrtyPaths).enter().append("path").attr("class","country").attr("id",function(d){ return d.id;}).attr("d",function(d){ return d.d;});
+						.data(CounrtyPaths).enter().append("path").attr("class","country").attr("id",function(d){ return d.title;}).attr("d",function(d){ return d.d;});
 				}
 				this.Country=Country;
 			})();
