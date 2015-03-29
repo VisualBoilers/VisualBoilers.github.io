@@ -1,0 +1,16 @@
+.country{
+  fill: none;
+  stroke: #a9a9a9;
+  stroke-width: 1;
+}
+.country:hover{
+  fill-opacity:0.5;
+}
+#countrysvg{
+  float:left;
+}
+#info{
+  float:left;
+  border:1px solid black;
+  
+}
