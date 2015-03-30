@@ -1,6 +1,6 @@
 /* draw states on id #statesvg */
 Country.draw("#countrysvg");
-
+var data;
 
 var clk = function(id){
   var width = 960,
@@ -24,7 +24,7 @@ var clk = function(id){
     .append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-    data1.forEach(function(d) {
+    data.forEach(function(d) {
       d[6] = +d[6];
     });
 
@@ -35,20 +35,21 @@ var clk = function(id){
 
     g.append("path")
         .attr("d", arc)
-        .style("fill", function(d) { return color(d.data1[6]); });
+        .style("fill", function(d) { return color(d.data[6]); });
 
     g.append("text")
         .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
         .attr("dy", ".35em")
         .style("text-anchor", "middle")
-        .text(function(d) { return d.data1[2]; });
+        .text(function(d) { return d.data[2]; });
 
 
 
 }
-var data1 = d3.json("newdata.json", function(data) {
+d3.json("newdata.json", function(json) {
 
-	var firstname = "Afghanistan";
+  data = json;
+  var firstname = "Afghanistan";
 	var amount = 0;
 
 	data.forEach(function(d){
