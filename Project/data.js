@@ -24,7 +24,7 @@ var clk = function(id){
       .append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-  var vdata = [1, 2, 3, 4, 5]
+  var vdata = [1, 2, 3, 4, 5, 6, 7]
 
     var g = svg.selectAll(".arc")
         .data(pie(vdata))
