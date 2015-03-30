@@ -25,7 +25,7 @@ var clk = function(id){
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
   var vdata = [1, 2, 3, 4, 5, 6, 7];
-      vdata.forEach(function(data1){
+      vdata.forEach(function(data2){
 
     var g = svg.selectAll(".arc")
         .data(pie(vdata))
@@ -34,7 +34,7 @@ var clk = function(id){
 
     g.append("path")
         .attr("d", arc)
-            .style("fill", function(d) { return color(d.data1); });
+            .style("fill", function(d) { return color(d.data2); });
 
     g.append("text")
         .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
