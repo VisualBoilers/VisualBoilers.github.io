@@ -9,6 +9,7 @@ var clk = function(id){
 
   var color = d3.scale.ordinal()
       .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
   var arc = d3.svg.arc()
       .outerRadius(radius - 10)
       .innerRadius(0);
@@ -32,7 +33,8 @@ var clk = function(id){
 
     g.append("path")
         .attr("d", arc)
-            .style("fill", function(d) { return color(d); });
+        .data(vdata)
+            .style("fill", function(d) { return color(d.vdata); });
 
     g.append("text")
         .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
@@ -45,7 +47,7 @@ var data1 = d3.json("newdata.json", function(data) {
 
 	var firstname = "Afghanistan";
 	var amount = 0;
-	
+
 	data.forEach(function(d){
 		if(d[2] === firstname) {
 			amount = amount + d[6];
@@ -61,8 +63,7 @@ var data1 = d3.json("newdata.json", function(data) {
 		return clk(this);
 		});
 		firstname = d[2];
-		amount = d[6];	
+		amount = d[6];
 }
 });
 });
-
