@@ -24,10 +24,11 @@ var clk = function(id){
       .append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-  var vdata = [1, 2, 3, 4, 5, 6, 7].forEach(function(data1){
+  var vdata = [1, 2, 3, 4, 5, 6, 7];
+      vdata.forEach(function(data1){
 
     var g = svg.selectAll(".arc")
-        .data(pie(vdata))
+        .data(pie(data1))
         .enter().append("g")
         .attr("class", "arc");
 
@@ -39,7 +40,7 @@ var clk = function(id){
         .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
         .attr("dy", ".35em")
         .style("text-anchor", "middle")
-        .text(function(d) { return d.vdata; });
+        .text(function(d) { return d.data1; });
 
   });
 
