@@ -28,7 +28,7 @@ var clk = function(id){
       vdata.forEach(function(data1){
 
     var g = svg.selectAll(".arc")
-        .data(pie(data1))
+        .data(pie(vdata))
         .enter().append("g")
         .attr("class", "arc");
 
@@ -40,7 +40,7 @@ var clk = function(id){
         .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
         .attr("dy", ".35em")
         .style("text-anchor", "middle")
-        .text(function(d) { return d.data1; });
+        .text(function(d) { return d.vdata; });
 
   });
 
