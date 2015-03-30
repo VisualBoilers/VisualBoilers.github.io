@@ -16,7 +16,7 @@ var clk = function(id){
 
   var pie = d3.layout.pie()
       .sort(null)
-      .value(function(d) { return d.population; });
+      .value(function(d) { return d[6]; });
 
   var svg = d3.select("body").append("svg")
       .attr("width", width)
