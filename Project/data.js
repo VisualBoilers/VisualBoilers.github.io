@@ -3,8 +3,8 @@ Country.draw("#countrysvg");
 var data;
 
 var clk = function(id){
-  var width = 960,
-      height = 500,
+  var width = 400,
+      height = 400,
       radius = Math.min(width, height) / 2;
 
   var color = d3.scale.ordinal()
@@ -29,7 +29,7 @@ var clk = function(id){
     });
 
     var g = svg.selectAll(".arc")
-        .data(pie(data1))
+        .data(pie(data[6]))
       .enter().append("g")
         .attr("class", "arc");
 
