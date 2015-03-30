@@ -24,7 +24,7 @@ var clk = function(id){
       .append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-  var vdata = [1, 2, 3, 4, 5, 6, 7]
+  var vdata = [1, 2, 3, 4, 5, 6, 7].forEach(function(data1){
 
     var g = svg.selectAll(".arc")
         .data(pie(vdata))
@@ -33,14 +33,16 @@ var clk = function(id){
 
     g.append("path")
         .attr("d", arc)
-        .data(vdata)
-            .style("fill", function(d) { return color(d.vdata); });
+            .style("fill", function(d) { return color(d.data1); });
 
     g.append("text")
         .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
         .attr("dy", ".35em")
         .style("text-anchor", "middle")
         .text(function(d) { return d.vdata; });
+
+  });
+
 
 }
 var data1 = d3.json("newdata.json", function(data) {
