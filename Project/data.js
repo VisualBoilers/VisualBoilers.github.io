@@ -3,49 +3,91 @@ Country.draw("#countrysvg");
 var data;
 
 var clk = function(id){
-  var width = 400,
-      height = 400,
-      radius = Math.min(width, height) / 2;
 
-  var color = d3.scale.ordinal()
-      .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+  var countryarray = [];
+  var year = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014];
 
-  var arc = d3.svg.arc()
-      .outerRadius(radius - 10)
-      .innerRadius(0);
+  data.forEach(function(d){
+    if(d[2] == id){
+      countryarray.push(d);
+    }
+    else{
+      break;
+    }
+  });
 
-  var pie = d3.layout.pie()
-      .sort(null)
-      .value(function(d) { return d[6]; });
+  countryarray.sort(function(a,b){
+    return d3.ascending(a[0], b[0]);
+  });
 
-  var svg = d3.select("body").append("svg")
-      .attr("width", width)
-      .attr("height", height)
-    .append("g")
-      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+  var firstyear = 2005;
+  var yearamount = 0;
+  var yeararray = [];
+  var i = 0;
 
-    data.forEach(function(d) {
-      d[6] = +d[6];
-    });
+  countryarray.forEach(function(d){
+    if(d[0] == firstyear){
+      yearamount = yearamount + d[6];
+    }
+    else{
+      yeararray.push(yearamount);
+      firstyear = firstyear + 1;
+      while(d[0] !== firstyear){
+        yeararray.push(0);
+        firstyear = firstyear + 1;
+      }
+      yearamount = d[6];
+    }
 
-    var g = svg.selectAll(".arc")
-        .data(pie(data[6]))
-      .enter().append("g")
-        .attr("class", "arc");
+  })
 
-    g.append("path")
-        .attr("d", arc)
-        .style("fill", function(d) { return color(d.data[6]); });
+  var w = 300;
+			var h = 300;
+			var outerRadius = w / 2;
+			var innerRadius = 0;
+			var arc = d3.svg.arc()
+							.innerRadius(innerRadius)
+							.outerRadius(outerRadius);
 
-    g.append("text")
-        .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
-        .attr("dy", ".35em")
-        .style("text-anchor", "middle")
-        .text(function(d) { return d.data[2]; });
+			var pie = d3.layout.pie();
 
+			//Easy colors accessible via a 10-step ordinal scale
+			var color = d3.scale.category10();
 
+			//Create SVG element
+			var svg = d3.select("body")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+			//Set up groups
+			var arcs = svg.selectAll("g.arc")
+						  .data(pie(yeararray))
+						  .enter()
+						  .append("g")
+						  .attr("class", "arc")
+						  .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
+
+			//Draw arc paths
+			arcs.append("path")
+			    .attr("fill", function(d, i) {
+			    	return color(i);
+			    })
+			    .attr("d", arc);
+
+			//Labels
+			arcs.append("text")
+			    .attr("transform", function(d) {
+			    	return "translate(" + arc.centroid(d) + ")";
+			    })
+			    .attr("text-anchor", "middle")
+			    .text(function(d) {
+			    	return d.value;
+			    });
 
 }
+
+
 d3.json("newdata.json", function(json) {
 
   data = json;
