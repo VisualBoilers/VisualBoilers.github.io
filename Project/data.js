@@ -39,9 +39,9 @@ var clk = function(c){
       }
       yearamount = d[6];
     }
-console.log(yearamount);
-  });
 
+  });
+console.log(yearamount);
   var w = 300;
 			var h = 300;
 			var outerRadius = w / 2;
