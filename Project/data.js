@@ -72,11 +72,11 @@ console.log(yeararray);
 						  .attr("class", "arc")
 						  .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
 
-			for(j=0;j<11;j++){//Draw arc paths
+	var j=-1;		//Draw arc paths
 			arcs.append("path")
 			    .attr("fill", function(d, i) {
 			    	return color(i);
-					//console.log(i);
+					j=j+1;//console.log(i);
 			    })
 			    .attr("d", arc);
 
@@ -88,7 +88,7 @@ console.log(yeararray);
 			    })
 			    .attr("text-anchor", "middle")
 			    .text(year[j]);
-				}
+				
 		// .text(function(d) {
 			//    	return d.value;
 			//    });		
