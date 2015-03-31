@@ -72,7 +72,7 @@ console.log(yeararray);
 						  .attr("class", "arc")
 						  .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
 
-			for(i=0;i<year.length;i++){//Draw arc paths
+			for(j=0;j<year.length;j++){//Draw arc paths
 			arcs.append("path")
 			    .attr("fill", function(d, i) {
 			    	return color(i);
@@ -87,7 +87,7 @@ console.log(yeararray);
 			    	return "translate(" + arc.centroid(d) + ")";
 			    })
 			    .attr("text-anchor", "middle")
-			    .text(year[i]);
+			    .text(year[j]);
 				}
 		// .text(function(d) {
 			//    	return d.value;
