@@ -2,14 +2,14 @@
 Country.draw("#countrysvg");
 var data;
 
-var clk = function(id){
+var clk = function(c){
 
-  console.log(id);
+  console.log(c.id);
   var countryarray = [];
   var year = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014];
 
   data.forEach(function(d){
-    if(d[2] == id){
+    if(d[2] == c.id){
       countryarray.push(d);
       console.log(d);
     }
