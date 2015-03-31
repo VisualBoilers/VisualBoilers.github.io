@@ -39,7 +39,7 @@ var clk = function(c){
       }
       yearamount = d[6];
     }
-
+console.log(yearamount);
   });
 
   var w = 300;
@@ -73,7 +73,7 @@ var clk = function(c){
 			arcs.append("path")
 			    .attr("fill", function(d, i) {
 			    	return color(i);
-					console.log(i);
+					//console.log(i);
 			    })
 			    .attr("d", arc);
 
