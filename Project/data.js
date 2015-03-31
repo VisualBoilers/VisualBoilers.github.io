@@ -4,14 +4,12 @@ var data;
 
 var clk = function(c){
 
-  console.log(c.id);
   var countryarray = [];
   var year = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014];
 
   data.forEach(function(d){
     if(d[2] == c.id){
       countryarray.push(d);
-      console.log(d);
     }
     else{
       //break;
@@ -22,7 +20,6 @@ var clk = function(c){
     return d3.ascending(a[0], b[0]); //
   });
 
-  console.log(countryarray);
   var firstyear = 2005;
   var yearamount = 0;
   var yeararray = [];
