@@ -28,6 +28,7 @@ var clk = function(id){
   countryarray.forEach(function(d){
     if(d[0] == firstyear){
       yearamount = yearamount + d[6];
+      console.log(yearamount);
     }
     else{
       yeararray.push(yearamount);
@@ -40,8 +41,6 @@ var clk = function(id){
     }
 
   });
-
-  console.log(yeararray);
 
   var w = 300;
 			var h = 300;
