@@ -41,6 +41,8 @@ var clk = function(id){
 
   });
 
+  console.log(yeararray);
+
   var w = 300;
 			var h = 300;
 			var outerRadius = w / 2;
