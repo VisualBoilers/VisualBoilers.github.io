@@ -20,6 +20,7 @@ var clk = function(id){
     return d3.ascending(a[0], b[0]);
   });
 
+  console.log(countryarray);
   var firstyear = 2005;
   var yearamount = 0;
   var yeararray = [];
@@ -28,7 +29,7 @@ var clk = function(id){
   countryarray.forEach(function(d){
     if(d[0] == firstyear){
       yearamount = yearamount + d[6];
-      console.log(yearamount);
+    //  console.log(yearamount);
     }
     else{
       yeararray.push(yearamount);
