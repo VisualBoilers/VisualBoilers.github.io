@@ -81,12 +81,14 @@ console.log(yeararray);
 			    .attr("d", arc);
 
 			//Labels
+			for(i=0;i<year.length;i++){
 			arcs.append("text")
 			    .attr("transform", function(d) {
 			    	return "translate(" + arc.centroid(d) + ")";
 			    })
 			    .attr("text-anchor", "middle")
-			    .text(year);
+			    .text(year[i]);
+				}
 		// .text(function(d) {
 			//    	return d.value;
 			//    });		
