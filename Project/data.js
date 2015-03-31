@@ -7,7 +7,7 @@ var clk = function(id){
   var countryarray = [];
   var year = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014];
 
-  data.some(function(d){
+  data.forEach(function(d){
     if(d[2] == id){
       countryarray.push(d);
     }
@@ -17,7 +17,7 @@ var clk = function(id){
   });
 
   countryarray.sort(function(a,b){
-    return d3.ascending(a[0], b[0]);
+    return d3.ascending(a[0], b[0]); //
   });
 
   console.log(countryarray);
