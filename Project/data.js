@@ -73,6 +73,7 @@ var clk = function(c){
 			arcs.append("path")
 			    .attr("fill", function(d, i) {
 			    	return color(i);
+					console.log(i);
 			    })
 			    .attr("d", arc);
 
