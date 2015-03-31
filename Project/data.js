@@ -39,7 +39,7 @@ var clk = function(id){
       yearamount = d[6];
     }
 
-  })
+  });
 
   var w = 300;
 			var h = 300;
@@ -85,7 +85,7 @@ var clk = function(id){
 			    	return d.value;
 			    });
 
-}
+};
 
 
 d3.json("newdata.json", function(json) {
