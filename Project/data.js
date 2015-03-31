@@ -86,19 +86,10 @@ console.log(yeararray);
 			    	return "translate(" + arc.centroid(d) + ")";
 			    })
 			    .attr("text-anchor", "middle")
-			    .text(function(d) {
-			    	return d.value;
-			    });
-				/* ------- TEXT LABELS -------*/
-
-	var text = svg.select(".labels").selectAll("text")
-		.data(pie(year), key);
-
-	text.enter()
-		.append("text")
-		.attr("dy", ".35em")
-		.text(function(d) {
-			return d.data.year;});
+			    .text(year);
+		// .text(function(d) {
+			//    	return d.value;
+			//    });		
 
 };
 
