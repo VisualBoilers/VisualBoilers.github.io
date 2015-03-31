@@ -72,7 +72,7 @@ console.log(yeararray);
 						  .attr("class", "arc")
 						  .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
 
-			for(j=0;j<year.length;j++){//Draw arc paths
+			for(j=0;j<11;j++){//Draw arc paths
 			arcs.append("path")
 			    .attr("fill", function(d, i) {
 			    	return color(i);
