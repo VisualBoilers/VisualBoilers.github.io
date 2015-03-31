@@ -10,6 +10,7 @@ var clk = function(id){
   data.forEach(function(d){
     if(d[2] == id){
       countryarray.push(d);
+      console.log(d);
     }
     else{
       //break;
