@@ -72,26 +72,27 @@ console.log(yeararray);
 						  .attr("class", "arc")
 						  .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
 
-	var j=-1;		//Draw arc paths
+			//Draw arc paths
 			arcs.append("path")
 			    .attr("fill", function(d, i) {
 			    	return color(i);
-					j=j+1;//console.log(i);
+					//console.log(i);
 			    })
 			    .attr("d", arc);
 
 			//Labels
-			
+		
 			arcs.append("text")
 			    .attr("transform", function(d) {
 			    	return "translate(" + arc.centroid(d) + ")";
 			    })
 			    .attr("text-anchor", "middle")
-			    .text(year[j]);
+			   .text(function(d) {
+			    	return d.value;
+			   });		
+			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 				
-		// .text(function(d) {
-			//    	return d.value;
-			//    });		
+		
 
 };
 
