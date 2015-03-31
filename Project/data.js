@@ -7,12 +7,12 @@ var clk = function(id){
   var countryarray = [];
   var year = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014];
 
-  data.forEach(function(d){
+  data.some(function(d){
     if(d[2] == id){
       countryarray.push(d);
     }
     else{
-      break;
+      //break;
     }
   });
 
