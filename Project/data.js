@@ -75,8 +75,8 @@ var clk = function(c){
 			//Draw arc paths
 			arcs.append("path")
 			    .attr("fill", function(d, i) {
+            console.log(i);
 			    	return color(i);
-					console.log(i);
 			    })
 			    .attr("d", arc);
 
