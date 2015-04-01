@@ -72,7 +72,8 @@ var clk = function(c){
 						  .attr("class", "arc")
 						  .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
 
-			//Draw arc paths
+			d3.selectAll("svg").exit().remove();
+      //Draw arc paths
 			arcs.append("path")
 			    .attr("fill", function(d, i) {
 			    	return color(i);
@@ -100,10 +101,10 @@ d3.json("newdata.json", function(json) {
 
   data = json;
   var firstname = "Afghanistan";
-  var amount = 0;
-  var maxamount = 0
+	var amount = 0;
+
 	data.forEach(function(d){
-		if(d[2] === firstname) {		//summing amount by country in this if 
+		if(d[2] === firstname) {
 			amount = amount + d[6];
 			//console.log(amount);
 			//console.log(firstname);
@@ -112,7 +113,7 @@ d3.json("newdata.json", function(json) {
 		var countries = "#"+firstname;
 		d3.selectAll(countries)
 		.style("fill", "blue")
-		.style("opacity", amount) //amount
+		.style("opacity", amount)
 		.on("click",function(){
 		return clk(this);
 		});
