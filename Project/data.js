@@ -97,7 +97,7 @@ var clk = function(c){
 };
 
 
-d3.json("newdata.json", function(json) {
+d3.json("newdataz.json", function(json) {
 
   data = json;
   var firstname = "Afghanistan";
@@ -117,6 +117,7 @@ d3.json("newdata.json", function(json) {
 		.on("click",function(){
 		return clk(this);
 		});
+
 		firstname = d[2];
 		amount = d[6];
 }
