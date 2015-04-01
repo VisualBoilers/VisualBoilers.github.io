@@ -26,14 +26,16 @@ var clk = function(c){
   var i = 0;
 
   countryarray.forEach(function(d){
-    if(d[0] == firstyear){
+    if(d[0] == firstyear)
+    {
       yearamount = yearamount + d[6];
-    //  console.log(yearamount);
     }
-    else{
+    else
+    {
       yeararray.push(yearamount);
       firstyear = firstyear + 1;
-      while(d[0] !== firstyear){
+      while(d[0] !== firstyear)
+      {
         yeararray.push(0);
         firstyear = firstyear + 1;
       }
@@ -42,8 +44,6 @@ var clk = function(c){
 
   });
   yeararray.push(yearamount);
-//console.log(yearamount);
-//console.log(yeararray);
 
   var w = 300;
 			var h = 300;
@@ -87,8 +87,8 @@ var clk = function(c){
 			    	return "translate(" + arc.centroid(d) + ")";
 			    })
 			    .attr("text-anchor", "middle")
-			   .text(function(d) {
-			    	return d.value;
+			   .text(function(d, i) {
+			    	return year(i);
 			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 
