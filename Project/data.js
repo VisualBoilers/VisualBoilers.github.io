@@ -97,7 +97,7 @@ var clk = function(c){
 };
 
 
-d3.json("newdataz.json", function(json) {
+d3.json("newdata1.json", function(json) {
 
   data = json;
   var firstname = "Afghanistan";
