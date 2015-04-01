@@ -102,7 +102,7 @@ d3.json("newdata.json", function(json) {
   data = json;
   var firstname = "Afghanistan";
   var amount = 0;
-  var maxamount = 0
+  
 	data.forEach(function(d){
 		if(d[2] === firstname) {		//summing amount by country in this if 
 			amount = amount + d[6];
