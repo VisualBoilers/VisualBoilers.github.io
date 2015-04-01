@@ -72,7 +72,8 @@ var clk = function(c){
 						  .attr("class", "arc")
 						  .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
 
-			//Draw arc paths
+			d3.select("svg").exit().remove();
+      //Draw arc paths
 			arcs.append("path")
 			    .attr("fill", function(d, i) {
 			    	return color(i);
