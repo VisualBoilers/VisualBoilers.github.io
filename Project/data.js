@@ -75,7 +75,6 @@ var clk = function(c){
 			//Draw arc paths
 			arcs.append("path")
 			    .attr("fill", function(d, i) {
-            console.log(i);
 			    	return color(i);
 			    })
 			    .attr("d", arc);
@@ -88,7 +87,7 @@ var clk = function(c){
 			    })
 			    .attr("text-anchor", "middle")
 			   .text(function(d, i) {
-			    	return year(i);
+			    	return year[i];
 			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 
