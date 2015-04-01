@@ -42,8 +42,8 @@ var clk = function(c){
 
   });
   yeararray.push(yearamount);
-console.log(yearamount);
-console.log(yeararray);
+//console.log(yearamount);
+//console.log(yeararray);
 
   var w = 300;
 			var h = 300;
@@ -76,12 +76,12 @@ console.log(yeararray);
 			arcs.append("path")
 			    .attr("fill", function(d, i) {
 			    	return color(i);
-					//console.log(i);
+					console.log(i);
 			    })
 			    .attr("d", arc);
 
 			//Labels
-		
+
 			arcs.append("text")
 			    .attr("transform", function(d) {
 			    	return "translate(" + arc.centroid(d) + ")";
@@ -89,10 +89,10 @@ console.log(yeararray);
 			    .attr("text-anchor", "middle")
 			   .text(function(d) {
 			    	return d.value;
-			   });		
+			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
-				
-		
+
+
 
 };
 
