@@ -59,7 +59,7 @@ var clk = function(c){
 			var color = d3.scale.category10();
 
 			//Create SVG element
-			var svg = d3.select("body")
+			var svg = d3.select("#info")
 						.append("svg")
 						.attr("width", w)
 						.attr("height", h);
@@ -115,6 +115,7 @@ d3.json("olddata.json", function(json) {
 		.style("fill", "blue")
 		.style("opacity", amount)
 		.on("click",function(){
+			d3.selectAll("#info").selectAll("svg").remove();
 		return clk(this);
 		});
 
