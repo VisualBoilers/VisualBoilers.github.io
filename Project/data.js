@@ -8,7 +8,7 @@ var clk = function(c){
   var year = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014];
 
   data.forEach(function(d){
-    if(d[7] == c.id){
+    if(d[2] == c.id){
       countryarray.push(d);
     }
     else{
@@ -97,14 +97,14 @@ var clk = function(c){
 };
 
 
-d3.json("rightdata.json", function(json) {
+d3.json("olddata.json", function(json) {
 
   data = json;
-  var firstname = "AE";
+  var firstname = "Afghanistan";
 	var amount = 0;
 
 	data.forEach(function(d){
-		if(d[7] === firstname) {
+		if(d[2] === firstname) {
 			amount = amount + d[6];
 			//console.log(amount);
 			//console.log(firstname);
@@ -119,7 +119,7 @@ d3.json("rightdata.json", function(json) {
 		return clk(this);
 		});
 
-		firstname = d[7];
+		firstname = d[2];
 		amount = d[6];
 }
 });
