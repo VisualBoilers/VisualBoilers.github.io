@@ -888,7 +888,7 @@
 
 			Country.draw = function(id){
 					d3.select(id).selectAll(".country")
-						.data(CounrtyPaths).enter().append("path").attr("class","country").attr("id",function(d){ return d.id;}).attr("d",function(d){ return d.d;});
+						.data(CounrtyPaths).enter().append("path").attr("class","country").attr("id",function(d){ return d.title;}).attr("d",function(d){ return d.d;});
 				}
 				this.Country=Country;
 			})();
