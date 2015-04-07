@@ -6,7 +6,7 @@ var clk = function(c){
 
   var countryarray = [];
   var year = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014];
- var agency=["DoD","DOS","HHS","IAF","MCC","Peace Corps","Treasury","USADF","USAID","USDA"];
+ var agency=["DoD","DOS","HHS","IAF","MCC","PeaceCorps","Treasury","USADF","USAID","USDA"];
  
   data.forEach(function(d){
     if(d[7] == c.id){
