@@ -113,8 +113,9 @@ d3.json("rightdata.json", function(json) {
 		else {
 		var countries = "#"+firstname;
 		d3.selectAll(countries)
+		.style("stroke", #000000)
 		.style("fill", "darkblue")
-		.style("opacity", amount/800000000)/*function(amount){
+		.style("opacity", amount/99999999)/*function(amount){
 		if (amount > 1000000000){return 1}
 		else {return (amount/950000000)}})*/
 		.on("click",function(){
