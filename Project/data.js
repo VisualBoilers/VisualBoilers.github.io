@@ -6,7 +6,8 @@ var clk = function(c){
 
   var countryarray = [];
   var year = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014];
-
+ var agency=["DoD","DOS","HHS","IAF","MCC","Peace Corps","Treasury","USADF","USAID","USDA"];
+ 
   data.forEach(function(d){
     if(d[7] == c.id){
       countryarray.push(d);
@@ -16,17 +17,20 @@ var clk = function(c){
     }
   });
 
-  countryarray.sort(function(a,b){
+ var sortedYearArray= countryarray.sort(function(a,b){
     return d3.ascending(a[0], b[0]);
   });
-  console.log(countryarray);
+ // console.log(countryarray);
+  
+  
 
   var firstyear = 2005;
   var yearamount = 0;
   var yeararray = [];
+  var agencyArray=[];
   var i = 0;
 
-  countryarray.forEach(function(d){
+  sortedYearArray.forEach(function(d){
     if(d[0] == firstyear)
     {
       yearamount = yearamount + d[6];
