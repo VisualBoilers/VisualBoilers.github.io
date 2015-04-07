@@ -888,7 +888,19 @@
 
 			Country.draw = function(id){
 					d3.select(id).selectAll(".country")
-						.data(CounrtyPaths).enter().append("path").attr("class","country").attr("id",function(d){ return d.id;}).attr("d",function(d){ return d.d;});
+						.data(CounrtyPaths).enter().append("path").attr("class","country").attr("id",function(d){ return d.id;}).attr("d",function(d){ return d.d;})
+						 .on("mouseover", function() {
+			   		 d3.select(this)
+					  .attr("fill", "red")
+					  .append("svg:title")
+			 
+				
+			})
+			   .on("mouseout", function(d) {
+				   d3.select(this)
+				   		.transition()
+				   		.duration(150)
+						.attr("fill", "rgb(0, 0, " + (d * 10) + ")") });
 				}
 				this.Country=Country;
 			})();
