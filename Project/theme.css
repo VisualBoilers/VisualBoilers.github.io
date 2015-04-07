@@ -1,6 +1,6 @@
 .country{
   fill: none;
-  stroke: #000000; /*#a9a9a9*/
+  stroke: #a9a9a9; /*#a9a9a9*/
   stroke-width: 1;
 }
 .country:hover{
