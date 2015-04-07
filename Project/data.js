@@ -21,15 +21,19 @@ var clk = function(c){
     return d3.ascending(a[0], b[0]);
   });
  // console.log(countryarray);
-  
+   var sortedAgencyArray= countryarray.sort(function(a,b){
+    return d3.ascending(a[1], b[1]);
+  });
   
 
   var firstyear = 2005;
+  var firstagency="DoS";
   var yearamount = 0;
+  var agencyamount=0;
   var yeararray = [];
-  var agencyArray=[];
+  var agencyarray=[];
   var i = 0;
-
+//---------------------------------------------------year array-------------------------------
   sortedYearArray.forEach(function(d){
     if(d[0] == firstyear)
     {
@@ -49,7 +53,30 @@ var clk = function(c){
 
   });
   yeararray.push(yearamount);
+  
+  //--------------------------------------------agency array------------------------------------------------
+   sortedAgencyArray.forEach(function(d){
+    if(d[1] == firstagency)
+    {
+      agencyamount = agencyamount + d[6];
+    }
+    else
+    {
+      agencyarray.push(agencyamount);
+      firstagency = agency[i++];
+      while(d[0] !== firstagency)
+      {
+        agencyarray.push(0);
+       // firstyear = firstyear + 1;
+	   agency[i++];
+	   
+      }
+      agencyamount = d[6];
+    }
 
+  });
+  agencyarray.push(agencyamount);
+//----------------------------------------------------------------------
   var w = 300;
 			var h = 300;
 			var outerRadius = w / 2;
@@ -71,7 +98,7 @@ var clk = function(c){
 
 			//Set up groups
 			var arcs = svg.selectAll("g.arc")
-						  .data(pie(yeararray))
+						  .data(pie(agencyarray))//*******************************************************************************
 						  .enter()
 						  .append("g")
 						  .attr("class", "arc")
@@ -93,7 +120,7 @@ var clk = function(c){
 			    })
 			    .attr("text-anchor", "middle")
 			   .text(function(d, i) {
-			    	return year[i];
+			    	return agency[i];//*******************************************************************************************
 			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 
