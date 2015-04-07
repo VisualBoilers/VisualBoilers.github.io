@@ -889,10 +889,12 @@
 			Country.draw = function(id){
 					d3.select(id).selectAll(".country")
 						.data(CounrtyPaths).enter().append("path").attr("class","country").attr("id",function(d){ return d.id;}).attr("d",function(d){ return d.d;})
+						 
 						 .on("mouseover", function() {
 			   		 d3.select(this)
-					  .attr("fill", "red")
+					//  .attr("fill", "red")
 					  .append("svg:title")
+ 					  .text(function(d) { return "Click to see "+d.title+"'s amount breakdown!"; });
 			 
 				
 			})
