@@ -63,12 +63,14 @@ var clk = function(c){
     else
     {
       agencyarray.push(agencyamount);
-      firstagency = agency[i++];
-      while(d[0] !== firstagency)
+	  i=i+1;
+      firstagency = agency[i];
+      while(d[1] !== firstagency)
       {
         agencyarray.push(0);
        // firstyear = firstyear + 1;
-	   agency[i++];
+	   i=i+1;
+	   agency[i];
 	   
       }
       agencyamount = d[6];
