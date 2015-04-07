@@ -115,9 +115,9 @@ d3.json("rightdata.json", function(json) {
 		d3.selectAll(countries)
 		.style("stroke", "black")
 		.style("fill", "darkblue")
-		.style("opacity", function(amount){
-		if (amount > 1000000000){return .5;}
-		else {return (amount/950000000);}})
+		.style("fill-opacity", amount/1000000000)/*function(amount){
+		if(amount > 1000000000){return .5;}
+		else {return (amount/950000000);}})*/
 		.on("click",function(){
 			d3.selectAll("#info").selectAll("svg").remove();
 		return clk(this);
