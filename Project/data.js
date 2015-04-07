@@ -17,9 +17,9 @@ var clk = function(c){
     }
   });
 
- var sortedYearArray= countryarray.sort(function(a,b){
-    return d3.ascending(a[0], b[0]);
-  });
+// var sortedYearArray= countryarray.sort(function(a,b){
+ //   return d3.ascending(a[0], b[0]);
+ // });
  // console.log(countryarray);
    var sortedAgencyArray= countryarray.sort(function(a,b){
     return d3.ascending(a[1], b[1]);
