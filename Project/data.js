@@ -157,7 +157,10 @@ var clk = function(c){
 			var svg = d3.select("#info")
 						.append("svg")
 						.attr("width", w)
-						.attr("height", h);
+						.attr("height", h)
+						
+						 .attr("x", (4*w / 5))
+           				 .attr("y",h);
 
 			//Set up groups
 			var arcs = svg.selectAll("g.arc")
