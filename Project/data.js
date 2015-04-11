@@ -85,8 +85,8 @@ var clk = function(c){
   });
   agencyarray.push(agencyamount);
 //----------------------------------------------------------------------
-  var w = 300;
-			var h = 300;
+  var w = 200;
+			var h = 200;
 			var outerRadius = w / 2;
 			var innerRadius = 0;
 			var arc = d3.svg.arc()
@@ -140,8 +140,8 @@ var clk = function(c){
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?*/
 
 //-------------------------------------------------------------------
-  var w = 300;
-			var h = 300;
+  var w = 200;
+			var h = 200;
 			var outerRadius = w / 2;
 			var innerRadius = 0;
 			var arc = d3.svg.arc()
