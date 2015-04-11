@@ -84,7 +84,40 @@ var clk = function(c){
 
   });
   agencyarray.push(agencyamount);
-//----------------------------------------------------------------------
+ //--------------------------------------------category array------------------------------------------------
+    var sortedCategoryArray= countryarray.sort(function(a,b){
+    return d3.ascending(a[4], b[4]);
+  });
+  
+   sortedCategoryArray.forEach(function(d){
+    if(d[4] === firstcat)
+    {
+      catamount = catamount + d[6];
+    }
+    else
+    {
+      catarray.push(catamount);
+	  j=j+1;
+      firstcat = category[j];
+	  console.log(category[j]);
+	  console.log(firstcat);
+	  console.log(d[4]);
+	  console.log(i);
+      while(d[4] !== firstcat)
+      {
+        catarray.push(0);
+       // firstyear = firstyear + 1;
+	   j=j+1;
+	   category[j];
+	   firstcat = category[j];
+      }
+	  //console.log(agencyarray);
+      catamount = d[6];
+    }
+
+  });
+  catarray.push(catamount);
+//----------------------------------agency pie--------------------------------------------------------------------------------------
   var w = 200;
 			var h = 200;
 			var outerRadius = w / 2;
@@ -139,7 +172,7 @@ var clk = function(c){
 			   .text("$"+d3.round(d3.sum(yeararray),2))
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?*/
 
-//-------------------------------------------------------------------
+//---------------------------------year pie--------------------------------------------------------------------------------------------
   var w = 200;
 			var h = 200;
 			var outerRadius = w / 2;
@@ -187,6 +220,54 @@ var clk = function(c){
 			    .attr("text-anchor", "middle")
 			   .text(function(d, i) {
 			    	return year[i];//*******************************************************************************************
+			   });
+			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
+			
+//-----------------------------category pie--------------------------------------
+  var w = 300;
+			var h = 300;
+			var outerRadius = w / 2;
+			var innerRadius = 0;
+			var arc = d3.svg.arc()
+							.innerRadius(innerRadius)
+							.outerRadius(outerRadius);
+
+			var pie = d3.layout.pie();
+
+			//Easy colors accessible via a 10-step ordinal scale
+			var color = d3.scale.category20c();
+
+			//Create SVG element
+			var svg = d3.select("#info")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+			//Set up groups
+			var arcs = svg.selectAll("g.arc")
+						  .data(pie(catarray))//*******************************************************************************
+						  .enter()
+						  .append("g")
+						  .attr("class", "arc")
+						  .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
+
+			//d3.selectAll("svg").exit().remove();
+      //Draw arc paths
+			arcs.append("path")
+			    .attr("fill", function(d, i) {
+			    	return color(i);
+			    })
+			    .attr("d", arc);
+
+			//Labels
+
+			arcs.append("text")
+			    .attr("transform", function(d) {
+			    	return "translate(" + arc.centroid(d) + ")";
+			    })
+			    .attr("text-anchor", "middle")
+			   .text(function(d, i) {
+			    	return category[i];//*******************************************************************************************
 			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 
