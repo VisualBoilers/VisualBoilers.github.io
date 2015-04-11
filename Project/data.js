@@ -158,9 +158,9 @@ var clk = function(c){
 						.append("svg")
 						.attr("width", w)
 						.attr("height", h)
-						
-						 .attr("x", (4*w / 5))
-           				 .attr("y",h);
+						  .attr("transform","translate(150,100)");
+						// .attr("x", (4*w / 5))
+           				// .attr("y",h);
 
 			//Set up groups
 			var arcs = svg.selectAll("g.arc")
