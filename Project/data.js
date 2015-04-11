@@ -158,7 +158,7 @@ var clk = function(c){
 						.append("svg")
 						.attr("width", w)
 						.attr("height", h)
-						  .attr("transform","translate(150,100)");
+						  .attr("transform","translate(1500,100)");
 						// .attr("x", (4*w / 5))
            				// .attr("y",h);
 
