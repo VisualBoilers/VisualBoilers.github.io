@@ -10,7 +10,7 @@
   float:left;
 }
 #info{
- float:right;
+ float:inherit;
   border:1px solid black;
   
 }
