@@ -6,7 +6,7 @@ var clk = function(c){
 
   var countryarray = [];
   var year = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014];
-  var agency=["DoD","DOS","HHS","IAF","MCC","Peace Corps","Treasury","USADF","USAID","USDA"];
+  var agency=["DOS","DoD","HHS","IAF","MCC","Peace Corps","Treasury","USADF","USAID","USDA"];
   var category=["Democracy, Human Rights, and Governance","Economic Development","Education and Social Services","Environment","Health","Humanitarian Assistance","Multi-Sector","Peace and Security","Program Management"];
   
   data.forEach(function(d){
@@ -21,7 +21,7 @@ var clk = function(c){
   
   //console.log(sortedAgencyArray);
   var firstyear = 2005;
-  var firstagency="DoD";
+  var firstagency="DOS";
   var firstcat="Democracy, Human Rights, and Governance";
   var yearamount = 0;
   var agencyamount=0;
