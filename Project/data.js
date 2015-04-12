@@ -126,7 +126,7 @@ var clk = function(c){
    var w = 240;
 			var h = 240;
   var svg = d3.select("#info")
-						.append("svg")
+						.append("g")
 						.attr("width", w)
 						.attr("height", h/3);
 	 svg.append("text")
@@ -134,7 +134,6 @@ var clk = function(c){
 			   .attr("y", 0)
 			   .attr("text-anchor", "middle")
 			   .style("font-size", "24px")
-			   .attr("fill", "black")​
 			   .text("$"+d3.round(d3.sum(yeararray),2))
 //----------------------------------agency pie--------------------------------------------------------------------------------------
   var w = 240;
