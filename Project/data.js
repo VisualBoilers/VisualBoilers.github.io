@@ -123,8 +123,8 @@ var clk = function(c){
   });
   catarray.push(catamount);
 //----------------------------------agency pie--------------------------------------------------------------------------------------
-  var w = 200;
-			var h = 200;
+  var w = 240;
+			var h = 240;
 			var outerRadius = w / 2;
 			var innerRadius = 0;
 			var arc = d3.svg.arc()
@@ -170,16 +170,16 @@ var clk = function(c){
 			   });
 			   
 			   svg.append("text")
-			   .attr("x", w)
-			   .attr("y", h)
+			   .attr("x", w/2)
+			   .attr("y", 0)
 			   .attr("text-anchor", "middle")
 			   .style("font-size", "24px")
 			   .text("$"+d3.round(d3.sum(yeararray),2))
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?*/
 
 //---------------------------------year pie--------------------------------------------------------------------------------------------
-  var w = 200;
-			var h = 200;
+  var w = 240;
+			var h = 240;
 			var outerRadius = w / 2;
 			var innerRadius = 0;
 			var arc = d3.svg.arc()
@@ -229,8 +229,8 @@ var clk = function(c){
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 			
 //-----------------------------category pie--------------------------------------
-  var w = 300;
-			var h = 300;
+  var w = 240;
+			var h = 240;
 			var outerRadius = w / 2;
 			var innerRadius = 0;
 			var arc = d3.svg.arc()
