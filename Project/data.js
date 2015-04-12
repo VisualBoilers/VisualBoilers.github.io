@@ -122,6 +122,17 @@ var clk = function(c){
 
   });
   catarray.push(catamount);
+  //-------------------------------------------total number--------------------------
+  var svg = d3.select("#info")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h/3);
+	 svg.append("text")
+			   .attr("x", w/2)
+			   .attr("y", 0)
+			   .attr("text-anchor", "middle")
+			   .style("font-size", "24px")
+			   .text("$"+d3.round(d3.sum(yeararray),2))
 //----------------------------------agency pie--------------------------------------------------------------------------------------
   var w = 240;
 			var h = 240;
