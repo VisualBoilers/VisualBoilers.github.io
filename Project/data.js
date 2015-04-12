@@ -313,6 +313,7 @@ d3.json("rightdata.json", function(json) {
 		else {return (amount/950000000);}})*/
 		.on("click",function(){
 			d3.selectAll("#info").selectAll("svg").remove();
+			d3.selectAll("#info").selectAll("g").remove();
 		return clk(this);
 		});
 
