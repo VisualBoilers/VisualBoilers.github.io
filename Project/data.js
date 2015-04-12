@@ -123,6 +123,8 @@ var clk = function(c){
   });
   catarray.push(catamount);
   //-------------------------------------------total number--------------------------
+   var w = 240;
+			var h = 240;
   var svg = d3.select("#info")
 						.append("svg")
 						.attr("width", w)
@@ -180,7 +182,7 @@ var clk = function(c){
 			    	return agency[i];//*******************************************************************************************
 			   });
 			   
-			   svg.append("text")
+		/*	   svg.append("text")
 			   .attr("x", w/2)
 			   .attr("y", 0)
 			   .attr("text-anchor", "middle")
