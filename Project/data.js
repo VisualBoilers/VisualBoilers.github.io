@@ -59,8 +59,9 @@ var clk = function(c){
   //--------------------------------------------agency array------------------------------------------------
     var sortedAgencyArray= countryarray.sort(function(a,b){
     return d3.ascending(a[1], b[1]);
+	
   });
-  
+  console.log(sortedAgencyArray);
    sortedAgencyArray.forEach(function(d){
     if(d[1] === firstagency)
     {
