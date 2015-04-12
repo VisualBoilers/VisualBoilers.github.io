@@ -1,7 +1,7 @@
 /* draw states on id #statesvg */
 Country.draw("#countrysvg");
 var data;
-
+var CurrentCountry=0;
 var clk = function(c){
 
   var countryarray = [];
@@ -123,6 +123,7 @@ var clk = function(c){
   });
   catarray.push(catamount);
   //-------------------------------------------total number--------------------------
+  
    var w = 240;
 			var h = 240;
   var svg = d3.select("#info")
@@ -134,7 +135,7 @@ var clk = function(c){
 			   .attr("y", 0)
 			   .attr("text-anchor", "middle")
 			   .style("font-size", "24px")
-			   .text("$"+d3.round(d3.sum(yeararray),2))
+			   .text("The total amount is $"+d3.round(d3.sum(yeararray),2))
 //----------------------------------agency pie--------------------------------------------------------------------------------------
   var w = 240;
 			var h = 240;
