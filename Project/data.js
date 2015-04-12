@@ -134,6 +134,7 @@ var clk = function(c){
 			   .attr("y", 0)
 			   .attr("text-anchor", "middle")
 			   .style("font-size", "24px")
+			   .attr("fill", "black")​
 			   .text("$"+d3.round(d3.sum(yeararray),2))
 //----------------------------------agency pie--------------------------------------------------------------------------------------
   var w = 240;
