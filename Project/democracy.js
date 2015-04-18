@@ -297,7 +297,8 @@ d3.json("rightdata.json", function(json) {
 
   data = json;
   var firstname = "AE";
-	var amount = 0;
+  var firstcat="Democracy, Human Rights, and Governance";
+  var amount = 0;
 
 	data.forEach(function(d){
 		if(d[7] === firstname && d[4]=== firstcat) {
