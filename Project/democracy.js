@@ -301,10 +301,13 @@ d3.json("rightdata.json", function(json) {
   var amount = 0;
 
 	data.forEach(function(d){
-		if(d[7] === firstname && d[4]=== firstcat) {
-			amount = amount + d[6];
+		if(d[7] === firstname) {
+			if(d[4] === firstcat) {
+				amount = amount + d[6];
 			//console.log(amount);
 			//console.log(firstname);
+			}
+			else{amount = amount;}
 		}
 		else {
 		var countries = "#"+firstname;
