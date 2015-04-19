@@ -310,18 +310,18 @@ d3.json("rightdata.json", function(json) {
 		if(d[7] === firstname) {
 			if(d[4] === firstcat) {
 				amount = amount + d[6];
-			//console.log(amount);
+			console.log(amount);
 			//console.log(firstname);
 			}
 			else {
-				amount = amount;} //Noah need to move else (the one below this) so that it can look for diff categories for each country
+				console.log(amount);} //Noah need to move else (the one below this) so that it can look for diff categories for each country
 			}
 		else {
 		var countries = "#"+firstname;
 		d3.selectAll(countries)
 		//.style("stroke", "black")
 		.style("fill", "red")
-		.style("fill-opacity", amount)/*function(amount){
+		.style("fill-opacity", amount/1000000000)/*function(amount){
 		if(amount > 1000000000){return .5;}
 		else {return (amount/950000000);}})*/
 		.on("click",function(){
