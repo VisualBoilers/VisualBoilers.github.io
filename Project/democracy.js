@@ -322,8 +322,8 @@ d3.json("rightdata.json", function(json) {
 			if(amount === 0){
 				amount = undefined;
 				}
-			else {console.log(amount);}
-		var countries = "#"+firstname;
+			else {
+				var countries = "#"+firstname;
 		d3.selectAll(countries)
 		//.style("stroke", "black")
 		.style("fill", "red")
@@ -344,8 +344,9 @@ d3.json("rightdata.json", function(json) {
 			//console.log(firstname);
 			}
 			else {
-				amount = 0; //Noah need to move else (the one below this) so that it can look for diff categories for each country
+				amount = 0; 
 				}
 			}
+		}
 });
 });
