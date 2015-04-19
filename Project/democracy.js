@@ -320,7 +320,7 @@ d3.json("rightdata.json", function(json) {
 		}
 		else {
 			if(amount === 0){
-				amount = null;
+				amount = undefined;
 				}
 			else {console.log(amount);}
 		var countries = "#"+firstname;
