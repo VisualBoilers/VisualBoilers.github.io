@@ -310,15 +310,16 @@ d3.json("rightdata.json", function(json) {
 		if(d[7] === firstname) {
 			if(d[4] === firstcat) {
 				amount = amount + d[6];
-			console.log(amount);
+				console.log(amount);
 			//console.log(firstname);
 			}
+		}
 			else {
 				console.log(amount); //Noah need to move else (the one below this) so that it can look for diff categories for each country
 			}
 		else {
 			if(amount === 0){
-				amount = undefined;
+				amount = null;
 				}
 			else {console.log(amount);}
 		var countries = "#"+firstname;
