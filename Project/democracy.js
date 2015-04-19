@@ -317,8 +317,10 @@ d3.json("rightdata.json", function(json) {
 				console.log(amount); //Noah need to move else (the one below this) so that it can look for diff categories for each country
 			}
 		else {
-			if(amount === 0){amount =null;}
-			else{}
+			if(amount === 0){
+				amount = undefined;
+				}
+			else {console.log(amount);}
 		var countries = "#"+firstname;
 		d3.selectAll(countries)
 		//.style("stroke", "black")
@@ -341,7 +343,7 @@ d3.json("rightdata.json", function(json) {
 			}
 			else {
 				amount = 0; //Noah need to move else (the one below this) so that it can look for diff categories for each country
+				}
 			}
-}
 });
 });
