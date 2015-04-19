@@ -331,7 +331,15 @@ d3.json("rightdata.json", function(json) {
 		});
 
 		firstname = d[7];
-		amount = d[6];
+		amount =0;
+		if(d[4] === firstcat) {
+			amount = amount + d[6];
+			//console.log(amount);
+			//console.log(firstname);
+			}
+			else {
+				amount =0; //Noah need to move else (the one below this) so that it can look for diff categories for each country
+			}
 }
 });
 });
