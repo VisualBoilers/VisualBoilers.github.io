@@ -299,6 +299,12 @@ d3.json("rightdata.json", function(json) {
   var firstname = "AE";
   var firstcat="Democracy, Human Rights, and Governance";
   var amount = 0;
+  
+  data.sort( function(a,b) {
+		if (a[7] == b[7])
+			return a[4] < b[4] ? -1 : 1;
+			return a[7] > b[7] ? 1 : -1;
+	});
 
 	data.forEach(function(d){
 		if(d[7] === firstname) {
