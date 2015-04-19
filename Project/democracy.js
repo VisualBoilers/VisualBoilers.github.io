@@ -314,9 +314,11 @@ d3.json("rightdata.json", function(json) {
 			//console.log(firstname);
 			}
 			else {
-				console.log(amount);} //Noah need to move else (the one below this) so that it can look for diff categories for each country
+				console.log(amount); //Noah need to move else (the one below this) so that it can look for diff categories for each country
 			}
 		else {
+			if(amount === 0){amount =null;}
+			else{}
 		var countries = "#"+firstname;
 		d3.selectAll(countries)
 		//.style("stroke", "black")
@@ -331,14 +333,14 @@ d3.json("rightdata.json", function(json) {
 		});
 
 		firstname = d[7];
-		amount =0;
+		amount = 0;
 		if(d[4] === firstcat) {
 			amount = amount + d[6];
 			//console.log(amount);
 			//console.log(firstname);
 			}
 			else {
-				amount =0; //Noah need to move else (the one below this) so that it can look for diff categories for each country
+				amount = 0; //Noah need to move else (the one below this) so that it can look for diff categories for each country
 			}
 }
 });
