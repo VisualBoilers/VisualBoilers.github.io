@@ -10,7 +10,13 @@
   float:left;
 }
 #info{
- float:inherit;
+  float:inherit;
   border:1px solid black;
-  
+  margin-top: 10px;
+}
+
+.fb-comments{
+margin-top: 10px;
+margin: auto;
+text-align: center;
 }
