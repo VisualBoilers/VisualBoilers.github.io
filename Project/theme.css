@@ -16,6 +16,10 @@
  
 }
 
-.fb-comments{
-margin:0 auto;
+div.fb-comments{
+margin: 0 auto;
+}
+
+div._li{
+margin: 0 auto;
 }
