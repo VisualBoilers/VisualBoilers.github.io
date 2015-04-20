@@ -8,15 +8,14 @@
 }
 #countrysvg{
   float:left;
+  margin-top: 10px;
 }
 #info{
   float:inherit;
   border:1px solid black;
-  margin-top: 10px;
+ 
 }
 
 .fb-comments{
-margin-top: 10px;
-margin: auto;
-text-align: center;
+margin:0 auto;
 }
