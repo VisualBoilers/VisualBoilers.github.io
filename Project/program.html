@@ -1,0 +1,105 @@
+<!DOCYTYPE html>
+<html>
+<h2>Land of the free and home of the... Giving?</h2>
+<head>
+  <link rel="stylesheet" type="text/css" href="theme.css">
+  <script src="map.js"></script><!-- creates worldmap -->
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61660015-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+<p>This map shows the amount of aid (in dollars) the U.S. has given to different countries. Click on a country to see the total amount of dollars, and its breakdown of which agency the money is coming from, what years amounts were given, and what type of aid (category) was given!</p>
+ <input type="button" style="font-size: 12" value="All" onclick="location.href='http://visualboilers.github.io/Project/project.html';">
+ <input type="button" style="font-size: 12" value="Democracy, Human Rights, and Governance" onclick="location.href='http://visualboilers.github.io/Project/democracy.html';">
+ <input type="button" style="font-size: 12" value="Economic Development" onclick="location.href='http://visualboilers.github.io/Project/economic.html';">
+ <input type="button" style="font-size: 12" value="Education and Social Services" onclick="location.href='http://visualboilers.github.io/Project/education.html';">
+ <input type="button" style="font-size: 12" value="Environment" onclick="location.href='http://visualboilers.github.io/Project/environment.html';">
+ <input type="button" style="font-size: 12" value="Health" onclick="location.href='http://visualboilers.github.io/Project/health.html';">
+ <input type="button" style="font-size: 12" value="Humanitarian Assistance" onclick="location.href='http://visualboilers.github.io/Project/humanitarian.html';">
+ <input type="button" style="font-size: 12" value="Multi-Sector" onclick="location.href='http://visualboilers.github.io/Project/multi.html';">
+ <input type="button" <!DOCYTYPE html>
+<html>
+<h2>Land of the free and home of the... Giving?</h2>
+<head>
+  <link rel="stylesheet" type="text/css" href="theme.css">
+  <script src="map.js"></script><!-- creates worldmap -->
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61660015-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+<p>This map shows the amount of aid (in dollars) the U.S. has given to different countries. Click on a country to see the total amount of dollars, and its breakdown of which agency the money is coming from, what years amounts were given, and what type of aid (category) was given!</p>
+ <input type="button" style="font-size: 12" value="All" onclick="location.href='http://visualboilers.github.io/Project/project.html';">
+ <input type="button" style="font-size: 12" value="Democracy, Human Rights, and Governance" onclick="location.href='http://visualboilers.github.io/Project/democracy.html';">
+ <input type="button" style="font-size: 12" value="Economic Development" onclick="location.href='http://visualboilers.github.io/Project/economic.html';">
+ <input type="button" style="font-size: 12" value="Education and Social Services" onclick="location.href='http://visualboilers.github.io/Project/education.html';">
+ <input type="button" style="font-size: 12" value="Environment" onclick="location.href='http://visualboilers.github.io/Project/environment.html';">
+ <input type="button" style="font-size: 12" value="Health" onclick="location.href='http://visualboilers.github.io/Project/health.html';">
+ <input type="button" style="font-size: 12" value="Humanitarian Assistance" onclick="location.href='http://visualboilers.github.io/Project/humanitarian.html';">
+ <input type="button" style="font-size: 12" value="Multi-Sector" onclick="location.href='http://visualboilers.github.io/Project/multi.html';">
+ <input type="button" style="font-size: 12" value="Peace and Security" onclick="location.href='http://visualboilers.github.io/Project/peace.html';">
+ <input type="button" style="font-size: 12; background-color:#a19c9c" value="Program Management" onclick="location.href='http://visualboilers.github.io/Project/program.html';">
+  
+<svg width="1020" height="680" id="countrysvg"></svg> <!-- svg to hold the map. -->
+
+<div id= "info" width="500" height = "500" float = left></div>
+  
+<div id="fb" style="clear: both; width: 600px; margin: 0pt auto;">   
+<div class="fb-comments" data-href="http://visualboilers.github.io/Project/project.html" data-width="600" data-numposts="5" data-colorscheme="light"></div>
+</div>
+  
+</body>
+<script src="peace.js"></script>
+</html> value="Peace and Security" onclick="location.href='http://visualboilers.github.io/Project/peace.html';">
+ <input type="button" style="font-size: 12" value="Program Management" onclick="location.href='http://visualboilers.github.io/Project/program.html';">
+  
+<svg width="1020" height="680" id="countrysvg"></svg> <!-- svg to hold the map. -->
+
+<div id= "info" width="500" height = "500" float = left></div>
+  
+<div id="fb" style="clear: both; width: 600px; margin: 0pt auto;">   
+<div class="fb-comments" data-href="http://visualboilers.github.io/Project/project.html" data-width="600" data-numposts="5" data-colorscheme="light"></div>
+</div>
+  
+</body>
+<script src="program.js"></script>
+</html>
