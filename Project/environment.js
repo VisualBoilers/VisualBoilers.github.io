@@ -297,7 +297,7 @@ d3.json("rightdata.json", function(json) {
 
   data = json;
   var firstname = "AE";
-  var firstcat="Economic Development";
+  var firstcat="Environment";
   var amount = 0;
   
   data.sort( function(a,b) {
@@ -310,7 +310,7 @@ d3.json("rightdata.json", function(json) {
 		if(d[7] === firstname) {
 			if(d[4] === firstcat) {
 				amount = amount + d[6];
-				//console.log(amount);
+				console.log(amount);
 			//console.log(firstname);
 			}
 		
@@ -327,8 +327,8 @@ d3.json("rightdata.json", function(json) {
 				var countries = "#"+firstname;
 		d3.selectAll(countries)
 		//.style("stroke", "black")
-		.style("fill", "yellow")
-		.style("fill-opacity", amount/1000000)/*function(amount){
+		.style("fill", "green")
+		.style("fill-opacity", amount)/*function(amount){
 		if(amount > 1000000000){return .5;}
 		else {return (amount/950000000);}})*/
 		.on("click",function(){
