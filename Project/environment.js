@@ -31,6 +31,7 @@ var clk = function(c){
   var catarray = [];
   var i = 0;
   var j =0;
+  var formatAmount = d3.format("$,.2f");
 //---------------------------------------------------year array-------------------------------
    var sortedYearArray= countryarray.sort(function(a,b){
     return d3.ascending(a[0], b[0]);
@@ -136,7 +137,7 @@ var clk = function(c){
 			   .attr("y", 0)
 			   .attr("text-anchor", "middle")
 			   .style("font-size", "24px")
-			   .text("The total amount is $"+d3.round(d3.sum(yeararray),2))
+			   .text("The total amount is "+formatAmount(d3.sum(yeararray),2))
 //----------------------------------agency pie--------------------------------------------------------------------------------------
   var w = 240;
 			var h = 240;
@@ -327,7 +328,7 @@ d3.json("rightdata.json", function(json) {
 				var countries = "#"+firstname;
 		d3.selectAll(countries)
 		//.style("stroke", "black")
-		.style("fill", "brown")
+		.style("fill", "#8d5524")
 		.style("fill-opacity", amount/100000000)/*function(amount){
 		if(amount > 1000000000){return .5;}
 		else {return (amount/950000000);}})*/

@@ -31,7 +31,7 @@ var clk = function(c){
   var catarray = [];
   var i = 0;
   var j =0;
-  var formatAmount = d3.format("+$,.2f");
+  var formatAmount = d3.format("$,.2f");
 //---------------------------------------------------year array-------------------------------
    var sortedYearArray= countryarray.sort(function(a,b){
     return d3.ascending(a[0], b[0]);
