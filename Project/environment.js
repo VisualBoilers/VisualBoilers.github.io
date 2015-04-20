@@ -328,7 +328,7 @@ d3.json("rightdata.json", function(json) {
 				var countries = "#"+firstname;
 		d3.selectAll(countries)
 		//.style("stroke", "black")
-		.style("fill", "#8d5524")
+		.style("fill", "#8b5742")
 		.style("fill-opacity", amount/100000000)/*function(amount){
 		if(amount > 1000000000){return .5;}
 		else {return (amount/950000000);}})*/
