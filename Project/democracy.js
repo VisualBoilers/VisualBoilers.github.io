@@ -8,6 +8,7 @@ var clk = function(c){
   var year = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014];
   var agency=["DOS","DoD","HHS","IAF","MCC","Peace Corps","Treasury","USADF","USAID","USDA"];
   var category=["Democracy, Human Rights, and Governance","Economic Development","Education and Social Services","Environment","Health","Humanitarian Assistance","Multi-Sector","Peace and Security","Program Management"];
+  var sector=["Civil Society","Good Governance","Political Competition and Consensus-Building","Rule of Law and Human Rights"];//****************************
   
   data.forEach(function(d){
     if(d[7] == c.id){
@@ -23,12 +24,15 @@ var clk = function(c){
   var firstyear = 2005;
   var firstagency="DOS";
   var firstcat="Democracy, Human Rights, and Governance";
+  var firstsector="Civil Society";//***********************************************************
   var yearamount = 0;
-  var agencyamount=0;
+  var agencyamount =0;
   var catamount =0;
+  var sectoramount =0;//*********************************************************************
   var yeararray = [];
   var agencyarray=[];
   var catarray = [];
+  var sectorarray=[];//************************************************************************
   var i = 0;
   var j =0;
   var formatAmount = d3.format("$,.2f");
@@ -124,6 +128,39 @@ var clk = function(c){
 
   });
   catarray.push(catamount);
+   //--------------------------------------------scetor array------------------------------------------------
+    var sortedSectorArray= sortedCategoryArray.sort(function(a,b){
+    return d3.ascending(a[5], b[5]);
+  });
+  
+   sortedSectorArray.forEach(function(d){
+    if(d[5] === firstsector)
+    {
+      sectoramount = sectoramount + d[6];
+    }
+    else
+    {
+      sectorarray.push(sectoramount);
+	  j=j+1;
+      firstsector = sector[j];
+	  console.log(sector[j]);
+	  console.log(firstsector);
+	  console.log(d[5]);
+	  console.log(i);
+      while(d[5] !== firstsector)
+      {
+        sectorarray.push(0);
+       // firstyear = firstyear + 1;
+	   j=j+1;
+	   sector[j];
+	   firstsector = sector[j];
+      }
+	  //console.log(agencyarray);
+      sectoramount = d[6];
+    }
+
+  });
+  catarray.push(sectoramount);
   //-------------------------------------------total number--------------------------
   
    var w = 240;
@@ -244,7 +281,7 @@ var clk = function(c){
 			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 			
-//-----------------------------category pie--------------------------------------
+//-----------------------------sector pie--------------------------------------
   var w = 240;
 			var h = 240;
 			var outerRadius = w / 2;
@@ -266,7 +303,7 @@ var clk = function(c){
 
 			//Set up groups
 			var arcs = svg.selectAll("g.arc")
-						  .data(pie(catarray))//*******************************************************************************
+						  .data(pie(sectorarray))//*******************************************************************************
 						  .enter()
 						  .append("g")
 						  .attr("class", "arc")
@@ -288,7 +325,7 @@ var clk = function(c){
 			    })
 			    .attr("text-anchor", "middle")
 			   .text(function(d, i) {
-			    	return category[i];//*******************************************************************************************
+			    	return sector[i];//*******************************************************************************************
 			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 
