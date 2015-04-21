@@ -8,7 +8,7 @@ var clk = function(c){
   var year = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014];
   var agency=["DOS","DoD","HHS","IAF","MCC","Peace Corps","Treasury","USADF","USAID","USDA"];
   var category=["Democracy, Human Rights, and Governance","Economic Development","Education and Social Services","Environment","Health","Humanitarian Assistance","Multi-Sector","Peace and Security","Program Management"];
-  var sector=["Family Planning and Reproductive Health","Health - General","HIV/AIDS","Malaria","Maternal and Child Health","Nutrition","Other Public Health Threats","Pandemic Influenza and Other Emerging Threats","Tuberculosis","Water Supply and Sanitation"];//**change for each one**************************
+  var sector=["Family Planning and Reproductive Health","Health - General","HIV/AIDS","Malaria","Maternal and Child Health","Nutrition","Other Public Health Threats","Pandemic Influenza and Other Emerging Threats","Tuberculosis","Water Supply and Sanitation"]; 
 
   data.forEach(function(d){
     if(d[7] == c.id){
@@ -28,11 +28,11 @@ var clk = function(c){
   var yearamount = 0;
   var agencyamount =0;
   var catamount =0;
-  var sectoramount =0;//*********************************************************************
+  var sectoramount =0;    //*********************************************************************
   var yeararray = [];
   var agencyarray=[];
   var catarray = [];
-  var sectorarray=[];   //************************************************************************
+  var sectorarray=[];     //************************************************************************
 
   var i = 0;
   var j =0;
@@ -41,12 +41,12 @@ var clk = function(c){
   
   //--------------------------------------------sector array noah------------------------------------------------
     var sortedSectorArray = countryarray.sort(function(a,b){
-    return d3.ascending(a[1], b[1]);
+    return d3.ascending(a[5], b[5]);
 	
   });
   //console.log(sortedAgencyArray);
    sortedSectorArray.forEach(function(d){
-    if(d[1] === firstsector)
+    if(d[5] === firstsector)
     {
       sectoramount = sectoramount + d[6];
     }
