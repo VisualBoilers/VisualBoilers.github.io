@@ -145,7 +145,7 @@ var clk = function(c){
    }
    console.log(extractCataNew);
    
- /*  var sortedSectorArray= extractCataNew.sort(function(a,b){
+ var sortedSectorArray= extractCataNew.sort(function(a,b){
     return d3.ascending(a[5], b[5]);
   });
   console.log(sortedSectorArray);
@@ -176,7 +176,7 @@ var clk = function(c){
     }
 
   });
-  catarray.push(sectoramount);*/
+  catarray.push(sectoramount);
    
    
   //-------------------------------------------total number--------------------------
