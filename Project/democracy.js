@@ -130,7 +130,7 @@ var clk = function(c){
   catarray.push(catamount);
    //--------------------------------------------sector array------------------------------------------------
    
-   var extractCata=[];
+  /* var extractCata=[];
    var q=0;
    for(p=0;p<=sortedCategoryArray.length;p++){
    if(sortedCategoryArray[p][4]="Democracy, Human Rights, and Governance"){
