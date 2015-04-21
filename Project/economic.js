@@ -125,9 +125,9 @@ var clk = function(c){
 
   });
   catarray.push(catamount);
-  //------------------------------------------try sector-----------------------------
+  ///------------------------------------------try sector-----------------------------
  extractCata=sortedCategoryArray;
- console.log(extractCata[1]);
+ console.log(extractCata[1][4]);
   /*var extractCata=[];
    var q=0;
    for(p=0;p<=sortedCategoryArray.length;p++){
