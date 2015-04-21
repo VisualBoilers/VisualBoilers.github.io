@@ -130,7 +130,7 @@ var clk = function(c){
 
   });
   catarray.push(catamount);
-  ///------------------------------------------try sector-----------------------------
+/////------------------------------------------try sector-----------------------------
  var extractCata=[];//restore********************************************************************************
  extractCata=sortedCategoryArray;
  console.log(extractCata[1]);

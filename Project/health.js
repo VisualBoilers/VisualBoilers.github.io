@@ -23,7 +23,6 @@ var clk = function(c){
   //console.log(sortedAgencyArray);
   var firstyear = 2005;
   var firstagency="DOS";
-  var firstcat="Democracy, Human Rights, and Governance";
   var firstsector="Family Planning and Reproductive Health";   //***********************************************************
   var yearamount = 0;
   var agencyamount =0;
@@ -59,7 +58,7 @@ var clk = function(c){
 	  //console.log(agency[i]);
 	  //console.log(firstagency);
 	  //console.log(d[1]);
-      while(d[1] !== firstsector)
+      while(d[5] !== firstsector)
       {
         sectorarray.push(0);
        // firstyear = firstyear + 1;
