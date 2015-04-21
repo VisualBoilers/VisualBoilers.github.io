@@ -23,15 +23,20 @@ var clk = function(c){
   var firstyear = 2005;
   var firstagency="DOS";
   var firstcat="Democracy, Human Rights, and Governance";
+  
+  var firstsector="Civil Society";//***********************************************************
   var yearamount = 0;
-  var agencyamount=0;
+  var agencyamount =0;
   var catamount =0;
+  var sectoramount =0;//*********************************************************************
   var yeararray = [];
   var agencyarray=[];
-  var catarray = [];//************************************************************************************
+  var catarray = [];//***************************************************************************
+  var sectorarray=[];//************************************************************************
  // var extractCata=[];//restore********************************************************************************
   var i = 0;
   var j =0;
+  var k =0;
   var formatAmount = d3.format("$,.2f");
 //---------------------------------------------------year array-------------------------------
    var sortedYearArray= countryarray.sort(function(a,b){
@@ -110,7 +115,7 @@ var clk = function(c){
 	  console.log(category[j]);
 	  console.log(firstcat);
 	  console.log(d[4]);
-	  console.log(i);
+	  console.log(j);
       while(d[4] !== firstcat)
       {
         catarray.push(0);
@@ -139,6 +144,41 @@ var clk = function(c){
    else{q=q;}
    }
    console.log(extractCataNew);
+   
+   var sortedSectorArray= extractCataNew.sort(function(a,b){
+    return d3.ascending(a[5], b[5]);
+  });
+  console.log(sortedSectorArray);
+   sortedSectorArray.forEach(function(d){
+    if(d[5] === firstsector)
+    {
+      sectoramount = sectoramount + d[6];
+    }
+    else
+    {
+      sectorarray.push(sectoramount);
+	  k=k+1;
+      firstsector = sector[j];
+	  console.log(sector[j]);
+	  console.log(firstsector);
+	  console.log(d[5]);
+	  console.log(k);
+      while(d[5] !== firstsector)
+      {
+        sectorarray.push(0);
+       // firstyear = firstyear + 1;
+	   k=k+1;
+	   sector[k];
+	   firstsector = sector[k];
+      }
+	  //console.log(agencyarray);
+      sectoramount = d[6];
+    }
+
+  });
+  catarray.push(sectoramount);
+   
+   
   //-------------------------------------------total number--------------------------
   
    var w = 240;
