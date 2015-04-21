@@ -346,6 +346,7 @@ var clk = function(c){
 			    	return year[i];//*******************************************************************************************
 			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
+	
 			
 
 };
