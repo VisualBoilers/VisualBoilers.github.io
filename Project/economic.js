@@ -28,8 +28,8 @@ var clk = function(c){
   var catamount =0;
   var yeararray = [];
   var agencyarray=[];
-  var catarray = [];
-  var extractCata=[];
+  var catarray = [];//************************************************************************************
+ // var extractCata=[];//restore********************************************************************************
   var i = 0;
   var j =0;
   var formatAmount = d3.format("$,.2f");
@@ -126,6 +126,7 @@ var clk = function(c){
   });
   catarray.push(catamount);
   ///------------------------------------------try sector-----------------------------
+ var extractCata=[];//restore********************************************************************************
  extractCata=sortedCategoryArray;
  console.log(extractCata[1]);
   var extractCataNew=[];
