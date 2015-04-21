@@ -149,7 +149,7 @@ var clk = function(c){
     return d3.ascending(a[5], b[5]);
   });
   console.log(sortedSectorArray);
-   sortedSectorArray.forEach(function(d){
+  /* sortedSectorArray.forEach(function(d){
     if(d[5] === firstsector)
     {
       sectoramount = sectoramount + d[6];
@@ -176,7 +176,7 @@ var clk = function(c){
     }
 
   });
-  catarray.push(sectoramount);
+  catarray.push(sectoramount);*/
    
    
   //-------------------------------------------total number--------------------------
