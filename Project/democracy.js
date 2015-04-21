@@ -139,7 +139,7 @@ var clk = function(c){
 	   }
    }
    console.log(extractCata);
-    var sortedSectorArray= extractCata.sort(function(a,b){
+  /*  var sortedSectorArray= extractCata.sort(function(a,b){
     return d3.ascending(a[5], b[5]);
   });
   console.log(sortedSectorArray);
@@ -170,7 +170,7 @@ var clk = function(c){
     }
 
   });
-  catarray.push(sectoramount);
+  catarray.push(sectoramount);*/
   //-------------------------------------------total number--------------------------
   
    var w = 240;
@@ -313,7 +313,7 @@ var clk = function(c){
 
 			//Set up groups
 			var arcs = svg.selectAll("g.arc")
-						  .data(pie(sectorarray))//*******************************************************************************
+						  .data(pie(catarray))//*******************************************************************************
 						  .enter()
 						  .append("g")
 						  .attr("class", "arc")
@@ -335,7 +335,7 @@ var clk = function(c){
 			    })
 			    .attr("text-anchor", "middle")
 			   .text(function(d, i) {
-			    	return sector[i];//*******************************************************************************************
+			    	return category[i];//*******************************************************************************************
 			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 
