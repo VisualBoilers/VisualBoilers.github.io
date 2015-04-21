@@ -139,7 +139,7 @@ var sector=["Family Planning and Reproductive Health","Health - General","HIV/AI
   var extractCataNew=[];
    var q=0;
    for(p=0;p<extractCata.length;p++){
-   if(extractCata[p][4]===category[4]){//change for each category
+   if(extractCata[p][4]===category[4]){///change for each category
 	   extractCataNew[q]=extractCata[p];
 	   q++;
 	   }
