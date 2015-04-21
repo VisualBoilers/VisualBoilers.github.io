@@ -124,6 +124,17 @@ var clk = function(c){
 
   });
   catarray.push(catamount);
+  //------------------------------------------try sector-----------------------------
+  var extractCata=[];
+   var q=0;
+   for(p=0;p<=sortedCategoryArray.length;p++){
+   if(sortedCategoryArray[p][4]="Democracy, Human Rights, and Governance"){
+	   extractCata[q]=sortedCategoryArray[p];
+	   q++;
+	   }
+   else{q=q;}
+   }
+   console.log(extractCata);
   //-------------------------------------------total number--------------------------
   
    var w = 240;
