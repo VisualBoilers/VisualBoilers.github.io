@@ -29,6 +29,7 @@ var clk = function(c){
   var yeararray = [];
   var agencyarray=[];
   var catarray = [];
+  var extractCata=[];
   var i = 0;
   var j =0;
   var formatAmount = d3.format("$,.2f");
@@ -125,6 +126,7 @@ var clk = function(c){
   });
   catarray.push(catamount);
   //------------------------------------------try sector-----------------------------
+  var extractCata=sortedCategoryArray;
  console.log(sortedCategoryArray);
   /*var extractCata=[];
    var q=0;
