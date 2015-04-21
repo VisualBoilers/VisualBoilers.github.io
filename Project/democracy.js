@@ -76,11 +76,11 @@ var clk = function(c){
     {
       agencyarray.push(agencyamount);
 	  i=i+1;
-	  console.log(i);
-      firstagency = agency[i];
-	  console.log(agency[i]);
-	  console.log(firstagency);
-	  console.log(d[1]);
+	 // console.log(i);
+     // firstagency = agency[i];
+	//  console.log(agency[i]);
+	//  console.log(firstagency);
+	 // console.log(d[1]);
       while(d[1] !== firstagency)
       {
         agencyarray.push(0);
@@ -89,7 +89,7 @@ var clk = function(c){
 	   agency[i];
 	   firstagency = agency[i];
       }
-	  console.log(agencyarray);
+	//  console.log(agencyarray);
       agencyamount = d[6];
     }
 
@@ -110,10 +110,10 @@ var clk = function(c){
       catarray.push(catamount);
 	  j=j+1;
       firstcat = category[j];
-	  console.log(category[j]);
-	  console.log(firstcat);
-	  console.log(d[4]);
-	  console.log(i);
+	//  console.log(category[j]);
+	//  console.log(firstcat);
+	//  console.log(d[4]);
+	//  console.log(i);
       while(d[4] !== firstcat)
       {
         catarray.push(0);
@@ -336,6 +336,7 @@ d3.json("rightdata.json", function(json) {
   data = json;
   var firstname = "AE";
   var firstcat="Democracy, Human Rights, and Governance";
+  var firstsector="Civil Society";//***********************************************************
   var amount = 0;
   
   data.sort( function(a,b) {
