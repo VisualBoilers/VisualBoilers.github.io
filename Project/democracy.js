@@ -128,7 +128,7 @@ var clk = function(c){
 
   });
   catarray.push(catamount);
-   //--------------------------------------------scetor array------------------------------------------------
+   //--------------------------------------------sector array------------------------------------------------
     var sortedSectorArray= sortedCategoryArray.sort(function(a,b){
     return d3.ascending(a[5], b[5]);
   });
