@@ -126,18 +126,18 @@ var clk = function(c){
   });
   catarray.push(catamount);
   ///------------------------------------------try sector-----------------------------
- extractCata=sortedCategoryArray;
- console.log(extractCata[1]);
-  var extractCataNew=[];
+ //extractCata=sortedCategoryArray;
+ //console.log(extractCata[1]);
+ // var extractCataNew=[];
    var q=0;
    for(p=0;p<extractCata.length;p++){
-   if(extractCata[p][4]=sector[0]){
-	   extractCataNew[q]=extractCata[p];
+   if(sortedCategoryArray[p][4]=sector[0]){
+	   extractCata[q]=sortedCategoryArray[p];
 	   q++;
 	   }
    else{q=q;}
    }
-   console.log(extractCataNew);
+   console.log(extractCata);
   //-------------------------------------------total number--------------------------
   
    var w = 240;
