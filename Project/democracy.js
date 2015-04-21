@@ -33,6 +33,7 @@ var clk = function(c){
   var agencyarray=[];
   var catarray = [];
   var sectorarray=[];//************************************************************************
+  var k=0;//*********************************************************************************
   var i = 0;
   var j =0;
   var formatAmount = d3.format("$,.2f");
@@ -128,63 +129,53 @@ var clk = function(c){
 
   });
   catarray.push(catamount);
-   //--------------------------------------------sector array------------------------------------------------
-   
-  /* var extractCata=[];
-   var q=0;
-   for(p=0;p<=sortedCategoryArray.length;p++){
-   if(sortedCategoryArray[p][4]="Democracy, Human Rights, and Governance"){
-	   extractCata[q]=sortedCategoryArray[p];
-	   q++;
-	   }
-   }
-   console.log(extractCata);*/
-  /*  var sortedSectorArray= extractCata.sort(function(a,b){
-    return d3.ascending(a[5], b[5]);
-  });
-  console.log(sortedSectorArray);
-   sortedSectorArray.forEach(function(d){
-    if(d[5] === firstsector)
-    {
-      sectoramount = sectoramount + d[6];
-    }
-    else
-    {
-      sectorarray.push(sectoramount);
-	  j=j+1;
-      firstsector = sector[j];
-	  console.log(sector[j]);
-	  console.log(firstsector);
-	  console.log(d[5]);
-	  console.log(i);
-      while(d[5] !== firstsector)
-      {
-        sectorarray.push(0);
-       // firstyear = firstyear + 1;
-	   j=j+1;
-	   sector[j];
-	   firstsector = sector[j];
-      }
-	  //console.log(agencyarray);
-      sectoramount = d[6];
-    }
-
-  });
-  catarray.push(sectoramount);*/
-  //-------------------------------------------total number--------------------------
-  
-   var w = 240;
+   //-----------------------------sector pie--------------------------------------
+  var w = 240;
 			var h = 240;
-  var svg = d3.select("#info")
-						.append("g")
+			var outerRadius = w / 2;
+			var innerRadius = 0;
+			var arc = d3.svg.arc()
+							.innerRadius(innerRadius)
+							.outerRadius(outerRadius);
+
+			var pie = d3.layout.pie();
+
+			//Easy colors accessible via a 10-step ordinal scale
+			var color = d3.scale.category20c();
+
+			//Create SVG element
+			var svg = d3.select("#info")
+						.append("svg")
 						.attr("width", w)
-						.attr("height", h/3);
-	 svg.append("text")
-			   .attr("x", w/2)
-			   .attr("y", 0)
-			   .attr("text-anchor", "middle")
-			   .style("font-size", "24px")
-			   .text("The total amount is "+formatAmount(d3.sum(yeararray),2))
+						.attr("height", h);
+
+			//Set up groups
+			var arcs = svg.selectAll("g.arc")
+						  .data(pie(sectorarray))//*******************************************************************************
+						  .enter()
+						  .append("g")
+						  .attr("class", "arc")
+						  .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
+
+			//d3.selectAll("svg").exit().remove();
+      //Draw arc paths
+			arcs.append("path")
+			    .attr("fill", function(d, i) {
+			    	return color(i);
+			    })
+			    .attr("d", arc);
+
+			//Labels
+
+			arcs.append("text")
+			    .attr("transform", function(d) {
+			    	return "translate(" + arc.centroid(d) + ")";
+			    })
+			    .attr("text-anchor", "middle")
+			   .text(function(d, i) {
+			    	return sector[i];//*******************************************************************************************
+			   });
+			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 //----------------------------------agency pie--------------------------------------------------------------------------------------
   var w = 240;
 			var h = 240;
