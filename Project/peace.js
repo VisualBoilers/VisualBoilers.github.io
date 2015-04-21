@@ -8,7 +8,7 @@ var clk = function(c){
   var year = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014];
   var agency=["DOS","DoD","HHS","IAF","MCC","Peace Corps","Treasury","USADF","USAID","USDA"];
   var category=["Democracy, Human Rights, and Governance","Economic Development","Education and Social Services","Environment","Health","Humanitarian Assistance","Multi-Sector","Peace and Security","Program Management"];
-  var sector=["Combating Weapons of Mass Destruction (WMD)","Conflict Mitigation and Reconciliation","Counter-Narcotics","CounterTerrorism","Stabilization Operations and Security Sector Reform","Transnational Crime","Peace and Security - General"];//**change for each one**************************
+  var sector=["Combating Weapons of Mass Destruction (WMD)","Conflict Mitigation and Reconciliation","Counter-Narcotics","CounterTerrorism","Stabilization Operations and Security Sector Reform","Transnational Crime"];//**change for each one**************************
   data.forEach(function(d){
     if(d[7] == c.id){
       countryarray.push(d);
@@ -137,7 +137,7 @@ var clk = function(c){
   var extractCataNew=[];
    var q=0;
    for(p=0;p<extractCata.length;p++){
-   if(extractCata[p][4]===category[7]){//change for each category
+   if(extractCata[p][4]===category[6]){//change for each category
 	   extractCataNew[q]=extractCata[p];
 	   q++;
 	   }
