@@ -158,8 +158,8 @@ var clk = function(c){
     {
       sectorarray.push(sectoramount);
 	  k=k+1;
-      firstsector = sector[j];
-	  console.log(sector[j]);
+      firstsector = sector[k];
+	  console.log(sector[k]);
 	  console.log(firstsector);
 	  console.log(d[5]);
 	  console.log(k);
