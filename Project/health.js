@@ -170,7 +170,6 @@ var sector=["Family Planning and Reproductive Health","Health - General","HIV/AI
         sectorarray.push(0);
        // firstyear = firstyear + 1;
 	   k=k+1;
-	   console.log(k);
 	   sector[k];
 	   firstsector = sector[k];
       }
