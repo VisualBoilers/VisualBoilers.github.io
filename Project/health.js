@@ -24,7 +24,7 @@ var clk = function(c){
   var firstyear = 2005;
   var firstagency="DOS";
   var firstcat="Democracy, Human Rights, and Governance";
-  var firstsector="Family Planning and Reproductive Health";//***********************************************************
+  var firstsector="Family Planning and Reproductive Health";   //***********************************************************
   var yearamount = 0;
   var agencyamount =0;
   var catamount =0;
@@ -32,112 +32,56 @@ var clk = function(c){
   var yeararray = [];
   var agencyarray=[];
   var catarray = [];
-  var sectorarray=[];//************************************************************************
+  var sectorarray=[];   //************************************************************************
 
   var i = 0;
   var j =0;
   var k =0;
   var formatAmount = d3.format("$,.2f");
-//---------------------------------------------------year array-------------------------------
-   var sortedYearArray= countryarray.sort(function(a,b){
-    return d3.ascending(a[0], b[0]);
-  });
   
-  sortedYearArray.forEach(function(d){
-    if(d[0] == firstyear)
-    {
-      yearamount = yearamount + d[6];
-    }
-    else
-    {
-      yeararray.push(yearamount);
-      firstyear = firstyear + 1;
-      while(d[0] !== firstyear)
-      {
-        yeararray.push(0);
-        firstyear = firstyear + 1;
-      }
-      yearamount = d[6];
-    }
-
-  });
-  yeararray.push(yearamount);
-  
-  //--------------------------------------------agency array------------------------------------------------
-    var sortedAgencyArray= countryarray.sort(function(a,b){
+  //--------------------------------------------sector array noah------------------------------------------------
+    var sortedSectorArray = countryarray.sort(function(a,b){
     return d3.ascending(a[1], b[1]);
 	
   });
-  console.log(sortedAgencyArray);
-   sortedAgencyArray.forEach(function(d){
-    if(d[1] === firstagency)
+  //console.log(sortedAgencyArray);
+   sortedSectorArray.forEach(function(d){
+    if(d[1] === firstsector)
     {
-      agencyamount = agencyamount + d[6];
+      sectoramount = sectoramount + d[6];
     }
     else
     {
-      agencyarray.push(agencyamount);
+      sectorarray.push(sectoramount);
 	  i=i+1;
-	  console.log(i);
-      firstagency = agency[i];
-	  console.log(agency[i]);
-	  console.log(firstagency);
-	  console.log(d[1]);
-      while(d[1] !== firstagency)
+	  //console.log(i);
+      firstsector = sector[i];
+	  //console.log(agency[i]);
+	  //console.log(firstagency);
+	  //console.log(d[1]);
+      while(d[1] !== firstsector)
       {
-        agencyarray.push(0);
+        sectorarray.push(0);
        // firstyear = firstyear + 1;
 	   i=i+1;
-	   agency[i];
-	   firstagency = agency[i];
-      }
-	  console.log(agencyarray);
-      agencyamount = d[6];
-    }
-
-  });
-  agencyarray.push(agencyamount);
- //--------------------------------------------category array------------------------------------------------
-    var sortedCategoryArray= countryarray.sort(function(a,b){
-    return d3.ascending(a[4], b[4]);
-  });
-  
-   sortedCategoryArray.forEach(function(d){
-    if(d[4] === firstcat)
-    {
-      catamount = catamount + d[6];
-    }
-    else
-    {
-      catarray.push(catamount);
-	  j=j+1;
-      firstcat = category[j];
-	  console.log(category[j]);
-	  console.log(firstcat);
-	  console.log(d[4]);
-	  console.log(i);
-      while(d[4] !== firstcat)
-      {
-        catarray.push(0);
-       // firstyear = firstyear + 1;
-	   j=j+1;
-	   category[j];
-	   firstcat = category[j];
+	   sector[i];
+	   firstsector = sector[i];
       }
 	  //console.log(agencyarray);
-      catamount = d[6];
+      sectoramount = d[6];
     }
 
   });
-  catarray.push(catamount);
- /*///------------------------------------------try sector-----------------------------*/
+  sectorarray.push(sectoramount);
+
+ /*///------------------------------------------try sector-----------------------------
  var extractCata=[];//restore********************************************************************************
  extractCata=sortedCategoryArray;
  console.log(extractCata[1]);
   var extractCataNew=[];
    var q=0;
    for(p=0;p<extractCata.length;p++){
-   if(extractCata[p][4]===category[4]){   /*///change for each category*/
+   if(extractCata[p][4]===category[4]){   
 	   extractCataNew[q]=extractCata[p];
 	   q++;
 	   }
@@ -176,7 +120,7 @@ var clk = function(c){
     }
 
   });
-  sectorarray.push(sectoramount);
+  sectorarray.push(sectoramount);*/
    
    
   //-------------------------------------------total number--------------------------
@@ -216,7 +160,7 @@ var clk = function(c){
 
 			//Set up groups
 			var arcs = svg.selectAll("g.arc")
-						  .data(pie(sectorarray))//*******************************************************************************
+						  .data(pie(sectorarray))   //*******************************************************************************
 						  .enter()
 						  .append("g")
 						  .attr("class", "arc")
@@ -243,7 +187,7 @@ var clk = function(c){
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 
 //----------------------------------agency pie--------------------------------------------------------------------------------------
-  var w = 240;
+  /*var w = 240;
 			var h = 240;
 			var outerRadius = w / 2;
 			var innerRadius = 0;
@@ -298,7 +242,7 @@ var clk = function(c){
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?*/
 
 //---------------------------------year pie--------------------------------------------------------------------------------------------
-  var w = 240;
+  /*var w = 240;
 			var h = 240;
 			var outerRadius = w / 2;
 			var innerRadius = 0;
@@ -344,8 +288,8 @@ var clk = function(c){
 			    })
 			    .attr("text-anchor", "middle")
 			   .text(function(d, i) {
-			    	return year[i];//*******************************************************************************************
-			   });
+			    	return year[i]; 
+			   });*/
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 	
 			
