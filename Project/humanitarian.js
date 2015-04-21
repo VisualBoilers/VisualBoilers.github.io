@@ -414,7 +414,7 @@ d3.json("rightdata.json", function(json) {
 		if(d[7] === firstname) {
 			if(d[4] === firstcat) {
 				amount = amount + d[6];
-				console.log(amount);
+				//console.log(amount);
 			//console.log(firstname);
 			}
 		

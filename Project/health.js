@@ -39,7 +39,7 @@ var clk = function(c){
   var formatAmount = d3.format("$,.2f");
   
   //--------------------------------------------sector array noah------------------------------------------------
-    var sortedSectorArray = countryarray.sort(function(a,b){
+    /*var sortedSectorArray = countryarray.sort(function(a,b){
     return d3.ascending(a[5], b[5]);
 	
   });
@@ -61,7 +61,6 @@ var clk = function(c){
       while(d[5] !== firstsector)
       {
         sectorarray.push(0);
-       // firstyear = firstyear + 1;
 	   i=i+1;
 	   sector[i];
 	   firstsector = sector[i];
@@ -71,10 +70,10 @@ var clk = function(c){
     }
 
   });
-  sectorarray.push(sectoramount);
+  sectorarray.push(sectoramount);*/
 
- /*///------------------------------------------try sector-----------------------------
- var extractCata=[];//restore********************************************************************************
+ ///------------------------------------------try sector-----------------------------
+ var extractCata=[];									//restore********************************************************************************
  extractCata=sortedCategoryArray;
  console.log(extractCata[1]);
   var extractCataNew=[];
@@ -102,14 +101,13 @@ var clk = function(c){
       sectorarray.push(sectoramount);
 	  k=k+1;
       firstsector = sector[k];
-	  console.log(sector[k]);//
+	  console.log(sector[k]);
 	  console.log(firstsector);
 	  console.log(d[5]);
 	  console.log(k);
       while(d[5] !== firstsector)
       {
-        sectorarray.push(0);
-       // firstyear = firstyear + 1;
+       sectorarray.push(0);
 	   k=k+1;
 	   sector[k];
 	   firstsector = sector[k];
@@ -119,7 +117,7 @@ var clk = function(c){
     }
 
   });
-  sectorarray.push(sectoramount);*/
+  sectorarray.push(sectoramount);
    
    
   //-------------------------------------------total number--------------------------
@@ -312,7 +310,7 @@ d3.json("rightdata.json", function(json) {
 		if(d[7] === firstname) {
 			if(d[4] === firstcat) {
 				amount = amount + d[6];
-				console.log(amount);
+				//console.log(amount);
 			//console.log(firstname);
 			}
 		
