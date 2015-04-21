@@ -9,8 +9,7 @@ var clk = function(c){
   var agency=["DOS","DoD","HHS","IAF","MCC","Peace Corps","Treasury","USADF","USAID","USDA"];
   var category=["Democracy, Human Rights, and Governance","Economic Development","Education and Social Services","Environment","Health","Humanitarian Assistance","Multi-Sector","Peace and Security","Program Management"];
   var sector=["Civil Society","Good Governance","Political Competition and Consensus-Building","Rule of Law and Human Rights"];//****************************
-  
-  data.forEach(function(d){
+   data.forEach(function(d){
     if(d[7] == c.id){
       countryarray.push(d);
     }
@@ -24,6 +23,7 @@ var clk = function(c){
   var firstyear = 2005;
   var firstagency="DOS";
   var firstcat="Democracy, Human Rights, and Governance";
+  
   var firstsector="Civil Society";//***********************************************************
   var yearamount = 0;
   var agencyamount =0;
@@ -33,6 +33,7 @@ var clk = function(c){
   var agencyarray=[];
   var catarray = [];
   var sectorarray=[];//************************************************************************
+ 
   var k=0;//*********************************************************************************
   var i = 0;
   var j =0;
@@ -77,11 +78,11 @@ var clk = function(c){
     {
       agencyarray.push(agencyamount);
 	  i=i+1;
-	 // console.log(i);
-     // firstagency = agency[i];
-	//  console.log(agency[i]);
-	//  console.log(firstagency);
-	 // console.log(d[1]);
+	  console.log(i);
+      firstagency = agency[i];
+	  console.log(agency[i]);
+	  console.log(firstagency);
+	  console.log(d[1]);
       while(d[1] !== firstagency)
       {
         agencyarray.push(0);
@@ -346,53 +347,7 @@ var clk = function(c){
 			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 			
-//-----------------------------sector pie--------------------------------------
-  var w = 240;
-			var h = 240;
-			var outerRadius = w / 2;
-			var innerRadius = 0;
-			var arc = d3.svg.arc()
-							.innerRadius(innerRadius)
-							.outerRadius(outerRadius);
 
-			var pie = d3.layout.pie();
-
-			//Easy colors accessible via a 10-step ordinal scale
-			var color = d3.scale.category20c();
-
-			//Create SVG element
-			var svg = d3.select("#info")
-						.append("svg")
-						.attr("width", w)
-						.attr("height", h);
-
-			//Set up groups
-			var arcs = svg.selectAll("g.arc")
-						  .data(pie(catarray))//*******************************************************************************
-						  .enter()
-						  .append("g")
-						  .attr("class", "arc")
-						  .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
-
-			//d3.selectAll("svg").exit().remove();
-      //Draw arc paths
-			arcs.append("path")
-			    .attr("fill", function(d, i) {
-			    	return color(i);
-			    })
-			    .attr("d", arc);
-
-			//Labels
-
-			arcs.append("text")
-			    .attr("transform", function(d) {
-			    	return "translate(" + arc.centroid(d) + ")";
-			    })
-			    .attr("text-anchor", "middle")
-			   .text(function(d, i) {
-			    	return category[i];//*******************************************************************************************
-			   });
-			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 
 };
 
@@ -401,7 +356,6 @@ d3.json("rightdata.json", function(json) {
   data = json;
   var firstname = "AE";
   var firstcat="Democracy, Human Rights, and Governance";
-  var firstsector="Civil Society";//***********************************************************
   var amount = 0;
   
   data.sort( function(a,b) {
