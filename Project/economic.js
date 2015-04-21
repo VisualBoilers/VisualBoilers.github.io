@@ -125,7 +125,8 @@ var clk = function(c){
   });
   catarray.push(catamount);
   //------------------------------------------try sector-----------------------------
-  var extractCata=[];
+ console.log(sortedCategoryArray);
+  /*var extractCata=[];
    var q=0;
    for(p=0;p<=sortedCategoryArray.length;p++){
    if(sortedCategoryArray[p][4]="Democracy, Human Rights, and Governance"){
@@ -134,7 +135,7 @@ var clk = function(c){
 	   }
    else{q=q;}
    }
-   console.log(extractCata);
+   console.log(extractCata);*/
   //-------------------------------------------total number--------------------------
   
    var w = 240;
