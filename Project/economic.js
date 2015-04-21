@@ -133,10 +133,12 @@ var clk = function(c){
    for(p=0;p<extractCata.length;p++){
    if(sortedCategoryArray[p][4]=sector[0]){
 	   extractCata[q]=sortedCategoryArray[p];
+	   console.log(sortedCategoryArray[p]);
 	   q++;
 	   }
    else{q=q;}
    }
+    
    console.log(extractCata);
   //-------------------------------------------total number--------------------------
   
