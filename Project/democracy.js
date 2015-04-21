@@ -129,7 +129,17 @@ var clk = function(c){
   });
   catarray.push(catamount);
    //--------------------------------------------sector array------------------------------------------------
-    var sortedSectorArray= sortedCategoryArray.sort(function(a,b){
+   
+   var extractCata=[];
+   var q=0;
+   for(p=0;p<=sortedCategoryArray.length;p++){
+   if(sortedCategoryArray[p][4]="Democracy, Human Rights, and Governance"){
+	   extractCata[q]=sortedCategoryArray[p];
+	   q++;
+	   }
+   }
+   console.log(extractCata);
+    var sortedSectorArray= extractCata.sort(function(a,b){
     return d3.ascending(a[5], b[5]);
   });
   
