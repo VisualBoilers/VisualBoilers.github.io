@@ -130,7 +130,7 @@ var clk = function(c){
  console.log(extractCata[1]);
   var extractCataNew=[];
    var q=0;
-   for(p=0;p<=extractCata.length;p++){
+   for(p=0;p<extractCata.length;p++){
    if(extractCata[p][4]=sector[0]){
 	   extractCataNew[q]=extractCata[p];
 	   q++;
