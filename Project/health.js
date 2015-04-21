@@ -243,6 +243,7 @@ var sector=["Basic Education","Education and Social Services - General","Higher 
 			    	return sector[i];//*******************************************************************************************
 			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
+
 //----------------------------------agency pie--------------------------------------------------------------------------------------
   var w = 240;
 			var h = 240;
