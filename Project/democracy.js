@@ -66,7 +66,7 @@ var clk = function(c){
     return d3.ascending(a[1], b[1]);
 	
   });
-  console.log(sortedAgencyArray);
+ // console.log(sortedAgencyArray);
    sortedAgencyArray.forEach(function(d){
     if(d[1] === firstagency)
     {
@@ -142,7 +142,7 @@ var clk = function(c){
     var sortedSectorArray= extractCata.sort(function(a,b){
     return d3.ascending(a[5], b[5]);
   });
-  
+  console.log(sortedSectorArray);
    sortedSectorArray.forEach(function(d){
     if(d[5] === firstsector)
     {
