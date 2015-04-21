@@ -176,7 +176,7 @@ var clk = function(c){
     }
 
   });
-  catarray.push(sectoramount);
+  sectorarray.push(sectoramount);
    
    
   //-------------------------------------------total number--------------------------
@@ -321,7 +321,7 @@ var clk = function(c){
 
 			//Set up groups
 			var arcs = svg.selectAll("g.arc")
-						  .data(pie(catarray))//*******************************************************************************
+						  .data(pie(sectorarray))//*******************************************************************************
 						  .enter()
 						  .append("g")
 						  .attr("class", "arc")
@@ -343,7 +343,7 @@ var clk = function(c){
 			    })
 			    .attr("text-anchor", "middle")
 			   .text(function(d, i) {
-			    	return category[i];//*******************************************************************************************
+			    	return sector[i];//*******************************************************************************************
 			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 
