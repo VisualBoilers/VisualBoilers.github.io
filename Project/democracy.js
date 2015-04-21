@@ -138,7 +138,7 @@ var clk = function(c){
 	   q++;
 	   }
    }
-   console.log(extractCata);
+   console.log(extractCata);*/
   /*  var sortedSectorArray= extractCata.sort(function(a,b){
     return d3.ascending(a[5], b[5]);
   });
