@@ -129,7 +129,71 @@ var clk = function(c){
 
   });
   catarray.push(catamount);
-   //-----------------------------sector pie--------------------------------------
+    ///------------------------------------------try sector-----------------------------
+ var extractCata=[];//restore********************************************************************************
+ extractCata=sortedCategoryArray;
+ console.log(extractCata[1]);
+  var extractCataNew=[];
+   var q=0;
+   for(p=0;p<extractCata.length;p++){
+   if(extractCata[p][4]===category[0]){//change for each category
+	   extractCataNew[q]=extractCata[p];
+	   q++;
+	   }
+   else{q=q;}
+   }
+   console.log(extractCataNew);
+   
+ var sortedSectorArray= extractCataNew.sort(function(a,b){
+    return d3.ascending(a[5], b[5]);
+  });
+  console.log(sortedSectorArray);
+   sortedSectorArray.forEach(function(d){
+    if(d[5] === firstsector)
+    {
+      sectoramount = sectoramount + d[6];
+    }
+    else
+    {
+      sectorarray.push(sectoramount);
+	  k=k+1;
+      firstsector = sector[k];
+	  console.log(sector[k]);//
+	  console.log(firstsector);
+	  console.log(d[5]);
+	  console.log(k);
+      while(d[5] !== firstsector)
+      {
+        sectorarray.push(0);
+       // firstyear = firstyear + 1;
+	   k=k+1;
+	   sector[k];
+	   firstsector = sector[k];
+      }
+	  //console.log(agencyarray);
+      sectoramount = d[6];
+    }
+
+  });
+  sectorarray.push(sectoramount);
+   
+   
+  //-------------------------------------------total number--------------------------
+  
+   var w = 240;
+			var h = 240;
+  var svg = d3.select("#info")
+						.append("g")
+						.attr("width", w)
+						.attr("height", h/3);
+	 svg.append("text")
+			   .attr("x", w/2)
+			   .attr("y", 0)
+			   .attr("text-anchor", "middle")
+			   .style("font-size", "24px")
+			   .text("The total amount is "+formatAmount(d3.sum(sectorarray),2))
+			   
+//-----------------------------sector pie--------------------------------------
   var w = 240;
 			var h = 240;
 			var outerRadius = w / 2;
