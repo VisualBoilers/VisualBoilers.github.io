@@ -192,7 +192,7 @@ var clk = function(c){
 			   .attr("y", 0)
 			   .attr("text-anchor", "middle")
 			   .style("font-size", "24px")
-			   .text("The total amount is "+formatAmount(d3.sum(yeararray),2))
+			   .text("The total amount is "+formatAmount(d3.sum(sectorarray),2))
 			   
 //-----------------------------sector pie--------------------------------------
   var w = 240;
