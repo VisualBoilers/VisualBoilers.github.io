@@ -39,7 +39,7 @@ var clk = function(c){
   var formatAmount = d3.format("$,.2f");
   
   //--------------------------------------------sector array noah------------------------------------------------
-    /*var sortedSectorArray = countryarray.sort(function(a,b){
+    var sortedSectorArray = countryarray.sort(function(a,b){
     return d3.ascending(a[5], b[5]);
 	
   });
@@ -53,11 +53,11 @@ var clk = function(c){
     {
       sectorarray.push(sectoramount);
 	  i=i+1;
-	  //console.log(i);
+	  console.log(i);
       firstsector = sector[i];
-	  //console.log(agency[i]);
-	  //console.log(firstagency);
-	  //console.log(d[1]);
+	  console.log(agency[i]);
+	  console.log(firstagency);
+	  console.log(d[1]);
       while(d[5] !== firstsector)
       {
         sectorarray.push(0);
@@ -70,10 +70,10 @@ var clk = function(c){
     }
 
   });
-  sectorarray.push(sectoramount);*/
+  sectorarray.push(sectoramount);
 
  ///------------------------------------------try sector-----------------------------
- 
+ /*
      var sortedCategoryArray= countryarray.sort(function(a,b){
     return d3.ascending(a[4], b[4]);
   });
@@ -123,7 +123,7 @@ var clk = function(c){
     }
 
   });
-  sectorarray.push(sectoramount);
+  sectorarray.push(sectoramount);*/
    
    
   //-------------------------------------------total number--------------------------
