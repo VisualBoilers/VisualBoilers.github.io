@@ -8,7 +8,9 @@ var clk = function(c){
   var year = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014];
   var agency=["DOS","DoD","HHS","IAF","MCC","Peace Corps","Treasury","USADF","USAID","USDA"];
   var category=["Democracy, Human Rights, and Governance","Economic Development","Education and Social Services","Environment","Health","Humanitarian Assistance","Multi-Sector","Peace and Security","Program Management"];
-  var sector=["Family Planning and Reproductive Health","Health - General","HIV/AIDS","Malaria","Maternal and Child Health","Nutrition","Other Public Health Threats","Pandemic Influenza and Other Emerging Threats ","Tuberculosis","Water Supply and Sanitation"]; 
+//var sector=["Basic Education","Education and Social Services - General","Higher Education","Social Assistance","Social Policies, Regulations, and Systems","Social Services"];//**change for each one**************************
+
+var sector=["Family Planning and Reproductive Health","Health - General","HIV/AIDS","Malaria","Maternal and Child Health","Nutrition","Other Public Health Threats","Pandemic Influenza and Other Emerging Threats ","Tuberculosis","Water Supply and Sanitation"];//**change for each one**************************
 
   data.forEach(function(d){
     if(d[7] == c.id){
@@ -23,68 +25,121 @@ var clk = function(c){
   //console.log(sortedAgencyArray);
   var firstyear = 2005;
   var firstagency="DOS";
-  var firstsector="Family Planning and Reproductive Health";   //***********************************************************
+  var firstcat="Democracy, Human Rights, and Governance";
+  var firstsector="Family Planning and Reproductive Health";//***********************************************************
   var yearamount = 0;
   var agencyamount =0;
   var catamount =0;
-  var sectoramount =0;    //*********************************************************************
+  var sectoramount =0;//*********************************************************************
   var yeararray = [];
   var agencyarray=[];
   var catarray = [];
-  var sectorarray=[];     //************************************************************************
+  var sectorarray=[];//************************************************************************
 
   var i = 0;
   var j =0;
   var k =0;
   var formatAmount = d3.format("$,.2f");
-  
-  /*//--------------------------------------------sector array noah------------------------------------------------
-    var sortedSectorArray = countryarray.sort(function(a,b){
-    return d3.ascending(a[5], b[5]);
-	
+//---------------------------------------------------year array-------------------------------
+   var sortedYearArray= countryarray.sort(function(a,b){
+    return d3.ascending(a[0], b[0]);
   });
-  //console.log(sortedAgencyArray);
-   sortedSectorArray.forEach(function(d){
-    if(d[5] === firstsector)
+  
+  sortedYearArray.forEach(function(d){
+    if(d[0] == firstyear)
     {
-      sectoramount = sectoramount + d[6];
+      yearamount = yearamount + d[6];
     }
     else
     {
-      sectorarray.push(sectoramount);
-	  i=i+1;
-	  console.log(i);
-      firstsector = sector[i];
-	  console.log(agency[i]);
-	  console.log(firstagency);
-	  console.log(d[1]);
-      while(d[5] !== firstsector)
+      yeararray.push(yearamount);
+      firstyear = firstyear + 1;
+      while(d[0] !== firstyear)
       {
-        sectorarray.push(0);
-	   i=i+1;
-	   sector[i];
-	   firstsector = sector[i];
+        yeararray.push(0);
+        firstyear = firstyear + 1;
       }
-	  //console.log(agencyarray);
-      sectoramount = d[6];
+      yearamount = d[6];
     }
 
   });
-*/
- ///------------------------------------------try sector-----------------------------
- 
-     var sortedCategoryArray= countryarray.sort(function(a,b){
+  yeararray.push(yearamount);
+  
+  //--------------------------------------------agency array------------------------------------------------
+    var sortedAgencyArray= countryarray.sort(function(a,b){
+    return d3.ascending(a[1], b[1]);
+	
+  });
+  console.log(sortedAgencyArray);
+   sortedAgencyArray.forEach(function(d){
+    if(d[1] === firstagency)
+    {
+      agencyamount = agencyamount + d[6];
+    }
+    else
+    {
+      agencyarray.push(agencyamount);
+	  i=i+1;
+	  console.log(i);
+      firstagency = agency[i];
+	  console.log(agency[i]);
+	  console.log(firstagency);
+	  console.log(d[1]);
+      while(d[1] !== firstagency)
+      {
+        agencyarray.push(0);
+       // firstyear = firstyear + 1;
+	   i=i+1;
+	   agency[i];
+	   firstagency = agency[i];
+      }
+	  console.log(agencyarray);
+      agencyamount = d[6];
+    }
+
+  });
+  agencyarray.push(agencyamount);
+ //--------------------------------------------category array------------------------------------------------
+    var sortedCategoryArray= countryarray.sort(function(a,b){
     return d3.ascending(a[4], b[4]);
   });
- 
- 
- var extractCata=[];									//restore********************************************************************************
+  
+   sortedCategoryArray.forEach(function(d){
+    if(d[4] === firstcat)
+    {
+      catamount = catamount + d[6];
+    }
+    else
+    {
+      catarray.push(catamount);
+	  j=j+1;
+      firstcat = category[j];
+	  console.log(category[j]);
+	  console.log(firstcat);
+	  console.log(d[4]);
+	  console.log(i);
+      while(d[4] !== firstcat)
+      {
+        catarray.push(0);
+       // firstyear = firstyear + 1;
+	   j=j+1;
+	   category[j];
+	   firstcat = category[j];
+      }
+	  //console.log(agencyarray);
+      catamount = d[6];
+    }
+
+  });
+  catarray.push(catamount);
+ ///------------------------------------------try sector-----------------------------
+ var extractCata=[];//restore********************************************************************************
  extractCata=sortedCategoryArray;
  console.log(extractCata[1]);
   var extractCataNew=[];
    var q=0;
    for(p=0;p<extractCata.length;p++){
-   if(extractCata[p][4]===category[4]){   
+   if(extractCata[p][4]===category[4]){///change for each category
 	   extractCataNew[q]=extractCata[p];
 	   q++;
 	   }
@@ -106,13 +161,14 @@ var clk = function(c){
       sectorarray.push(sectoramount);
 	  k=k+1;
       firstsector = sector[k];
-	  console.log(sector[k]);
+	  console.log(sector[k]);//
 	  console.log(firstsector);
 	  console.log(d[5]);
 	  console.log(k);
       while(d[5] !== firstsector)
       {
-       sectorarray.push(0);
+        sectorarray.push(0);
+       // firstyear = firstyear + 1;
 	   k=k+1;
 	   sector[k];
 	   firstsector = sector[k];
@@ -162,7 +218,7 @@ var clk = function(c){
 
 			//Set up groups
 			var arcs = svg.selectAll("g.arc")
-						  .data(pie(sectorarray))   //*******************************************************************************
+						  .data(pie(sectorarray))//*******************************************************************************
 						  .enter()
 						  .append("g")
 						  .attr("class", "arc")
@@ -189,7 +245,7 @@ var clk = function(c){
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 
 //----------------------------------agency pie--------------------------------------------------------------------------------------
-  /*var w = 240;
+  var w = 240;
 			var h = 240;
 			var outerRadius = w / 2;
 			var innerRadius = 0;
@@ -244,7 +300,7 @@ var clk = function(c){
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?*/
 
 //---------------------------------year pie--------------------------------------------------------------------------------------------
-  /*var w = 240;
+  var w = 240;
 			var h = 240;
 			var outerRadius = w / 2;
 			var innerRadius = 0;
@@ -290,8 +346,8 @@ var clk = function(c){
 			    })
 			    .attr("text-anchor", "middle")
 			   .text(function(d, i) {
-			    	return year[i]; 
-			   });*/
+			    	return year[i];//*******************************************************************************************
+			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 	
 			
@@ -315,7 +371,7 @@ d3.json("rightdata.json", function(json) {
 		if(d[7] === firstname) {
 			if(d[4] === firstcat) {
 				amount = amount + d[6];
-				//console.log(amount);
+				console.log(amount);
 			//console.log(firstname);
 			}
 		
