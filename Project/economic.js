@@ -137,7 +137,7 @@ var clk = function(c){
   var extractCataNew=[];
    var q=0;
    for(p=0;p<extractCata.length;p++){
-   if(extractCata[p][4]=sector[0]){
+   if(extractCata[p][4]=category[0]){
 	   extractCataNew[q]=extractCata[p];
 	   q++;
 	   }
