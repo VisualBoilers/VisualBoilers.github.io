@@ -8,7 +8,7 @@ var clk = function(c){
   var year = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014];
   var agency=["DOS","DoD","HHS","IAF","MCC","Peace Corps","Treasury","USADF","USAID","USDA"];
   var category=["Democracy, Human Rights, and Governance","Economic Development","Education and Social Services","Environment","Health","Humanitarian Assistance","Multi-Sector","Peace and Security","Program Management"];
-  
+   var sector=["Civil Society","Good Governance","Political Competition and Consensus-Building","Rule of Law and Human Rights"];//****************************
   data.forEach(function(d){
     if(d[7] == c.id){
       countryarray.push(d);
@@ -126,18 +126,18 @@ var clk = function(c){
   });
   catarray.push(catamount);
   ///------------------------------------------try sector-----------------------------
- extractCata=sortedCategoryArray;
- console.log(extractCata[1][4]);
-  /*var extractCata=[];
+// extractCata=sortedCategoryArray;
+ //console.log(extractCata[1][4]);
+  /*var extractCata=[];*/
    var q=0;
    for(p=0;p<=sortedCategoryArray.length;p++){
-   if(sortedCategoryArray[p][4]="Democracy, Human Rights, and Governance"){
+   if(sortedCategoryArray[p][4]=sector[0]){
 	   extractCata[q]=sortedCategoryArray[p];
 	   q++;
 	   }
    else{q=q;}
    }
-   console.log(extractCata);*/
+   console.log(extractCata);
   //-------------------------------------------total number--------------------------
   
    var w = 240;
