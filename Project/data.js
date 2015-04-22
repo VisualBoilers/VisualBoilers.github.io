@@ -287,17 +287,17 @@ var clk = function(c){
 
 			//Labels
 
-		/*	arcs.append("text")
+			arcs.append("text")
 			    .attr("transform", function(d) {
 			    	return "translate(" + arc.centroid(d) + ")";
 			    })
 			    .attr("text-anchor", "middle")
 			   .text(function(d, i) {
 			    	return category[i];//*******************************************************************************************
-			   });*/
+			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 
-};
+//};
 
 d3.json("rightdata.json", function(json) {
 
