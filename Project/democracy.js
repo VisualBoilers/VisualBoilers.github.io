@@ -214,7 +214,12 @@ var clk = function(c){
 			var svg = d3.select("#info")
 						.append("svg")
 						.attr("width", w)
-						.attr("height", h);
+						.attr("height", h)
+						.attr("id","pie");
+						
+			selectAll("#pie").append("text")
+						.attr("id","tool");
+			
 
 			//Set up groups
 			var arcs = svg.selectAll("g.arc")
@@ -230,8 +235,11 @@ var clk = function(c){
 			    .attr("fill", function(d, i) {
 			    	return color(i);
 			    })
-			    .attr("d", arc);
-
+			    .attr("d", arc)
+			.on("mouseober",function(d){
+				svg.select("#tool")
+				.text(function(d){return "more more";});
+				});
 			//Labels
 
 			arcs.append("text")
