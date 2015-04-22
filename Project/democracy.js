@@ -237,9 +237,12 @@ var clk = function(c){
 			    })
 			    .attr("d", arc)
 			.on("mouseober",function(d){
-				d3.select("#tool")
+				d3.select(this)
+				.append("svg:title")
 				.text(function(d){return "more more";});
 				});
+		
+		
 			//Labels
 
 			arcs.append("text")
