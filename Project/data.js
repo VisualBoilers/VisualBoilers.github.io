@@ -193,7 +193,7 @@ var clk = function(c){
 			   .text("$"+d3.round(d3.sum(yeararray),2))
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?*/
 
-//---------------------------------year pie--------------------------------------------------------------------------------------------
+/*//---------------------------------year pie--------------------------------------------------------------------------------------------
   var w = 240;
 			var h = 240;
 			var outerRadius = w / 2;
@@ -242,7 +242,7 @@ var clk = function(c){
 			   .text(function(d, i) {
 			    	return year[i];//*******************************************************************************************
 			   });
-			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
+			//.text(year[i]); //each time creat a piece, add the lable by increasing i?*/
 
 //-----------------------------category pie--------------------------------------
   var w = 240;
