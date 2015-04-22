@@ -239,7 +239,7 @@ var clk = function(c){
 			.on("mouseover",function(d){
 				d3.select(this)
 				.append("svg:title")
-				.text(function(d){return "more more";});
+				.text(function(d){return sector[i];});
 				})
 				.on("mouseout",function(d){});
 		    
