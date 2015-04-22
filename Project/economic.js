@@ -245,7 +245,7 @@ var clk = function(c){
 var svg = d3.select("#info")
 						.append("svg")
 						.attr("width", w)
-						.attr("height", 2*h);
+						.attr("height", 1.7*h);
 var text = svg.selectAll("text")
                         .data(circleData)
                         .enter()
