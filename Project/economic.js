@@ -241,111 +241,24 @@ var clk = function(c){
 			    	return sector[i];//*******************************************************************************************
 			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
-//----------------------------------agency pie--------------------------------------------------------------------------------------
-  var w = 240;
-			var h = 240;
-			var outerRadius = w / 2;
-			var innerRadius = 0;
-			var arc = d3.svg.arc()
-							.innerRadius(innerRadius)
-							.outerRadius(outerRadius);
-
-			var pie = d3.layout.pie();
-
-			//Easy colors accessible via a 10-step ordinal scale
-			var color = d3.scale.category20b();
-
-			//Create SVG element
-			var svg = d3.select("#info")
+//--------------------------------------text&border------------------------------------------------------------------------------------
+var svg = d3.select("#info")
 						.append("svg")
 						.attr("width", w)
-						.attr("height", h);
+						.attr("height", 2*h);
+var text = svg.selectAll("text")
+                        .data(circleData)
+                        .enter()
+                        .append("text");
+var textLabels = text
+                 .attr("x", w/2)
+                 .attr("y", 1.5*h)
+                 .text( "more more more")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", "20px")
+                 .attr("fill", "red");
 
-			//Set up groups
-			var arcs = svg.selectAll("g.arc")
-						  .data(pie(agencyarray))//*******************************************************************************
-						  .enter()
-						  .append("g")
-						  .attr("class", "arc")
-						  .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
 
-			//d3.selectAll("svg").exit().remove();
-      //Draw arc paths
-			arcs.append("path")
-			    .attr("fill", function(d, i) {
-			    	return color(i);
-			    })
-			    .attr("d", arc);
-
-			//Labels
-
-			arcs.append("text")
-			    .attr("transform", function(d) {
-			    	return "translate(" + arc.centroid(d) + ")";
-			    })
-			    .attr("text-anchor", "middle")
-			   .text(function(d, i) {
-			    	return agency[i];//*******************************************************************************************
-			   });
-			   
-		/*	   svg.append("text")
-			   .attr("x", w/2)
-			   .attr("y", 0)
-			   .attr("text-anchor", "middle")
-			   .style("font-size", "24px")
-			   .text("$"+d3.round(d3.sum(yeararray),2))
-			//.text(year[i]); //each time creat a piece, add the lable by increasing i?*/
-
-//---------------------------------year pie--------------------------------------------------------------------------------------------
-  var w = 240;
-			var h = 240;
-			var outerRadius = w / 2;
-			var innerRadius = 0;
-			var arc = d3.svg.arc()
-							.innerRadius(innerRadius)
-							.outerRadius(outerRadius);
-
-			var pie = d3.layout.pie();
-
-			//Easy colors accessible via a 10-step ordinal scale
-			var color = d3.scale.category20c();
-
-			//Create SVG element
-			var svg = d3.select("#info")
-						.append("svg")
-						.attr("width", w)
-						.attr("height", h)
-						  .attr("transform","translate(1500,100)");
-						// .attr("x", (4*w / 5))
-           				// .attr("y",h);
-
-			//Set up groups
-			var arcs = svg.selectAll("g.arc")
-						  .data(pie(yeararray))//*******************************************************************************
-						  .enter()
-						  .append("g")
-						  .attr("class", "arc")
-						  .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
-
-			//d3.selectAll("svg").exit().remove();
-      //Draw arc paths
-			arcs.append("path")
-			    .attr("fill", function(d, i) {
-			    	return color(i);
-			    })
-			    .attr("d", arc);
-
-			//Labels
-
-			arcs.append("text")
-			    .attr("transform", function(d) {
-			    	return "translate(" + arc.centroid(d) + ")";
-			    })
-			    .attr("text-anchor", "middle")
-			   .text(function(d, i) {
-			    	return year[i];//*******************************************************************************************
-			   });
-			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 			
 
 
