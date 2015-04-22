@@ -297,7 +297,7 @@ var clk = function(c){
 			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 
-//};
+};
 
 d3.json("rightdata.json", function(json) {
 
