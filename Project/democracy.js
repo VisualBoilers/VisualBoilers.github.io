@@ -248,6 +248,15 @@ var clk = function(c){
 			    	return sector[i];//*******************************************************************************************
 			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
+//--------------------------------------text------------------------------------------------------------------------------------
+var textLabels = text
+                 .attr("x", w/2)
+                 .attr("y", h/2)
+                 .text( "more more more")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", "20px")
+                 .attr("fill", "red");
+
 //----------------------------------agency pie--------------------------------------------------------------------------------------
   var w = 240;
 			var h = 240;
