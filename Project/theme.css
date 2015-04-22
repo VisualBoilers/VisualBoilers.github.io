@@ -32,3 +32,6 @@ text-align: center;
 #source {
 font-size: 10px;
 }
+p{
+margin: 0 auto;
+}
