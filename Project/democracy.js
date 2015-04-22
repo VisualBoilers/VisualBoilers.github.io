@@ -271,7 +271,7 @@ var textLabels = text
 						.attr("height", 2*h/3);
 	 svg.append("text")
 			   .attr("x", w/2)
-			   .attr("y", h*2)
+			   .attr("y", h*3)
 			   .attr("text-anchor", "middle")
 			   .style("font-size", "24px")
 			   .text("The total amount is "+formatAmount(d3.sum(sectorarray),2))
