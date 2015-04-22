@@ -278,12 +278,7 @@ var clk = function(c){
 			    .attr("fill", function(d, i) {
 			    	return color(i);
 			    })
-			    .attr("d", arc)
-          .on('mouseover', function(d,i) {
-            d3.select(this).append("text")
-            .text(function(d,i){
-              return catagory[i];
-          });
+			    .attr("d", arc);
 
 			//Labels
 
