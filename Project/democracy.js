@@ -194,6 +194,13 @@ var clk = function(c){
 			   .style("font-size", "24px")
 			   .text("The total amount is "+formatAmount(d3.sum(sectorarray),2))
 			   
+	  svg.append("text")
+			   .attr("x", w/2)
+			   .attr("y", h/2)
+			   .attr("text-anchor", "middle")
+			   .style("font-size", "24px")
+			   .text("The total amount is "+formatAmount(d3.sum(sectorarray),2))
+			   
 //-----------------------------sector pie--------------------------------------
   var w = 240;
 			var h = 240;
