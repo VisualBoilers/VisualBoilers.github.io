@@ -1,4 +1,66 @@
 <!DOCYTYPE html>
+<style>
+#leftWrapper {
+    float:left;
+    width: 25px;
+    height: 120px;
+}
+#l1 {
+    background-color: rgba(255,0,0,1.0);
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    border: 1px solid black;
+}
+#l2 {
+    background-color: rgba(255,0,0,.75);
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    border: 1px solid black;
+}
+#l3 {
+    background-color: rgba(255,0,0,.5);
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    border: 1px solid black;
+}
+#l4 {
+    background-color: rgba(255,0,0,.25);
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    border: 1px solid black;
+
+}
+#l5 {
+    background-color: rgba(255,0,0,.0);
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    border: 1px solid black;
+}
+
+
+#rightAside {
+    color: black;
+    width: 100px;
+    height: 120px;
+    display: inline-block;
+}
+
+td, tr {   
+    height: 20px;
+}
+
+#legend{
+  
+  /*put legend in right place on map*/
+
+}
+</style>
+
 <html>
 <h2>Land of the free and home of the... Giving?</h2>
 <head>
@@ -41,9 +103,35 @@
  <input type="button" style="font-size: 12" value="Program Management" onclick="location.href='http://visualboilers.github.io/Project/program.html';">
   
 <svg width="1020" height="680" id="countrysvg"></svg> <!-- svg to hold the map. -->
-
 <div id= "info" width="500" height = "500" float = left></div>
-  
+<div id="legend">
+	<div id="leftWrapper">
+	   <div id="l1"></div>
+	   <div id="l2"></div>
+	   <div id="l3"></div>
+	   <div id="l4"></div>
+	   <div id="l5"></div>
+	</div>
+	<div id="rightAside">
+		<table style="width:100%">
+		  <tr>
+			<td>≥ $100,000,000.00</td>
+		  </tr>
+			<tr>
+			<td>≥ $75,000,000.00</td>
+		  </tr>
+			<tr>
+			<td>≥ $50,000,000.00</td>
+		  </tr>
+		  <tr>
+			<td>≥ $25,000,000.00</td>
+		  </tr>
+		  <tr>
+			<td>≤ $25,000,000.00</td>
+		  </tr>
+		</table>
+	</div>
+</div>  
 <div id="fb" style="clear: both; width: 600px; margin: 0pt auto;">   
 <div class="fb-comments" data-href="http://visualboilers.github.io/Project/project.html" data-width="600" data-numposts="5" data-colorscheme="light"></div>
 </div>
