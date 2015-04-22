@@ -8,7 +8,7 @@ var clk = function(c){
   var year = [2005,2006,2007,2008,2009,2010,2011,2012,2013,2014];
   var agency=["DOS","DoD","HHS","IAF","MCC","Peace Corps","Treasury","USADF","USAID","USDA"];
   var category=["Democracy, Human Rights, and Governance","Economic Development","Education and Social Services","Environment","Health","Humanitarian Assistance","Multi-Sector","Peace and Security","Program Management"];
-  
+
   data.forEach(function(d){
     if(d[7] == c.id){
       countryarray.push(d);
@@ -18,7 +18,7 @@ var clk = function(c){
     }
   });
 
-  
+
   //console.log(sortedAgencyArray);
   var firstyear = 2005;
   var firstagency="DOS";
@@ -36,7 +36,7 @@ var clk = function(c){
    var sortedYearArray= countryarray.sort(function(a,b){
     return d3.ascending(a[0], b[0]);
   });
-  
+
   sortedYearArray.forEach(function(d){
     if(d[0] == firstyear)
     {
@@ -56,11 +56,11 @@ var clk = function(c){
 
   });
   yeararray.push(yearamount);
-  
+
   //--------------------------------------------agency array------------------------------------------------
     var sortedAgencyArray= countryarray.sort(function(a,b){
     return d3.ascending(a[1], b[1]);
-	
+
   });
   console.log(sortedAgencyArray);
    sortedAgencyArray.forEach(function(d){
@@ -95,7 +95,7 @@ var clk = function(c){
     var sortedCategoryArray= countryarray.sort(function(a,b){
     return d3.ascending(a[4], b[4]);
   });
-  
+
    sortedCategoryArray.forEach(function(d){
     if(d[4] === firstcat)
     {
@@ -125,7 +125,7 @@ var clk = function(c){
   });
   catarray.push(catamount);
   //-------------------------------------------total number--------------------------
-  
+
    var w = 240;
 			var h = 240;
   var svg = d3.select("#info")
@@ -184,7 +184,7 @@ var clk = function(c){
 			   .text(function(d, i) {
 			    	return agency[i];//*******************************************************************************************
 			   });
-			   
+
 		/*	   svg.append("text")
 			   .attr("x", w/2)
 			   .attr("y", 0)
@@ -243,7 +243,7 @@ var clk = function(c){
 			    	return year[i];//*******************************************************************************************
 			   });
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
-			
+
 //-----------------------------category pie--------------------------------------
   var w = 240;
 			var h = 240;
@@ -278,18 +278,23 @@ var clk = function(c){
 			    .attr("fill", function(d, i) {
 			    	return color(i);
 			    })
-			    .attr("d", arc);
+			    .attr("d", arc)
+          .on('mouseover', function(d,i) {
+            d3.select(this).append("text")
+            .text(function(d,i){
+              return catagory[i];
+          });
 
 			//Labels
 
-			arcs.append("text")
+		/*	arcs.append("text")
 			    .attr("transform", function(d) {
 			    	return "translate(" + arc.centroid(d) + ")";
 			    })
 			    .attr("text-anchor", "middle")
 			   .text(function(d, i) {
 			    	return category[i];//*******************************************************************************************
-			   });
+			   });*/
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 
 };
