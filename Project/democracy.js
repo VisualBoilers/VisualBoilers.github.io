@@ -254,27 +254,13 @@ var text = svg.selectAll("text")
                         .append("text");
 var textLabels = text
                  .attr("x", w/2)
-                 .attr("y", h)
+                 .attr("y", 1.5*h)
                  .text( "more more more")
                  .attr("font-family", "sans-serif")
                  .attr("font-size", "20px")
                  .attr("fill", "red");
 
 
-//------------------------------------------- number--------------------------
-  
-   var w = 240;
-			var h = 240;
-  var svg = d3.select("#info")
-						.append("g")
-						.attr("width", w)
-						.attr("height", h);
-	 svg.append("text")
-			   .attr("x", w/2)
-			   .attr("y", h*3)
-			   .attr("text-anchor", "middle")
-			   .style("font-size", "24px")
-			   .text("The total amount is "+formatAmount(d3.sum(sectorarray),2))
 
 };
 
