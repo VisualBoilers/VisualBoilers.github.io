@@ -217,7 +217,7 @@ var clk = function(c){
 						.attr("height", h)
 						.attr("id","pie");
 						
-			selectAll("#pie").append("text")
+			d3.selectAll("#pie").append("text")
 						.attr("id","tool");
 			
 
@@ -237,7 +237,7 @@ var clk = function(c){
 			    })
 			    .attr("d", arc)
 			.on("mouseober",function(d){
-				svg.select("#tool")
+				d3.select("#tool")
 				.text(function(d){return "more more";});
 				});
 			//Labels
