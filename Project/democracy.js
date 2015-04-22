@@ -194,12 +194,7 @@ var clk = function(c){
 			   .style("font-size", "24px")
 			   .text("The total amount is "+formatAmount(d3.sum(sectorarray),2))
 			   
-	  svg.append("text")
-			   .attr("x", w/2)
-			   .attr("y", h/2)
-			   .attr("text-anchor", "middle")
-			   .style("font-size", "24px")
-			   .text("The total amount is "+formatAmount(d3.sum(sectorarray),2))
+	  
 			   
 //-----------------------------sector pie--------------------------------------
   var w = 240;
@@ -259,14 +254,27 @@ var text = svg.selectAll("text")
                         .append("text");
 var textLabels = text
                  .attr("x", w/2)
-                 .attr("y", h/2)
+                 .attr("y", h)
                  .text( "more more more")
                  .attr("font-family", "sans-serif")
                  .attr("font-size", "20px")
                  .attr("fill", "red");
 
 
-
+//------------------------------------------- number--------------------------
+  
+   var w = 240;
+			var h = 240;
+  var svg = d3.select("#info")
+						.append("g")
+						.attr("width", w)
+						.attr("height", 2*h/3);
+	 svg.append("text")
+			   .attr("x", w/2)
+			   .attr("y", h*2)
+			   .attr("text-anchor", "middle")
+			   .style("font-size", "24px")
+			   .text("The total amount is "+formatAmount(d3.sum(sectorarray),2))
 
 };
 
