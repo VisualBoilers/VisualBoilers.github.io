@@ -2,6 +2,7 @@
 Country.draw("#countrysvg");
 var data;
 var CurrentCountry=0;
+var sector=["Civil Society","Good Governance","Political Competition and Consensus-Building","Rule of Law and Human Rights"];
 var clk = function(c){
 
   var countryarray = [];
