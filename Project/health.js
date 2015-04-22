@@ -10,7 +10,7 @@ var clk = function(c){
   var category=["Democracy, Human Rights, and Governance","Economic Development","Education and Social Services","Environment","Health","Humanitarian Assistance","Multi-Sector","Peace and Security","Program Management"];
 //var sector=["Basic Education","Education and Social Services - General","Higher Education","Social Assistance","Social Policies, Regulations, and Systems","Social Services"];//**change for each one**************************
 
-var sector=["Family Planning and Reproductive Health","Health - General","HIV/AIDS","Malaria","Maternal and Child Health","Nutrition","Other Public Health Threats","Pandemic Influenza and Other Emerging Threats ","Tuberculosis","Water Supply and Sanitation"];//**change for each one**************************
+var sector=["Family Planning and Reproductive Health","HIV/AIDS","Health - General","Malaria","Maternal and Child Health","Nutrition","Other Public Health Threats","Pandemic Influenza and Other Emerging Threats ","Tuberculosis","Water Supply and Sanitation"];//**change for each one**************************
 
   data.forEach(function(d){
     if(d[7] == c.id){
@@ -371,7 +371,7 @@ d3.json("rightdata.json", function(json) {
 		if(d[7] === firstname) {
 			if(d[4] === firstcat) {
 				amount = amount + d[6];
-				console.log(amount);
+				//console.log(amount);
 			//console.log(firstname);
 			}
 		
