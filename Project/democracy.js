@@ -268,7 +268,7 @@ var textLabels = text
   var svg = d3.select("#info")
 						.append("g")
 						.attr("width", w)
-						.attr("height", 2*h/3);
+						.attr("height", h);
 	 svg.append("text")
 			   .attr("x", w/2)
 			   .attr("y", h*3)
