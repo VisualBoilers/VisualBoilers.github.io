@@ -168,11 +168,58 @@ var clk = function(c){
 
 			//d3.selectAll("svg").exit().remove();
       //Draw arc paths
-			arcs.append("path")
+						arcs.append("path")
 			    .attr("fill", function(d, i) {
 			    	return color(i);
 			    })
-			    .attr("d", arc);
+			    .attr("d", arc)
+				.attr("xxx",agency[i])
+				
+			.on("mouseover",function(d,z){
+				d3.select(this)
+				.append("svg:title")
+				.style("font-size","30px")
+				.text(function(i){
+					
+					console.log(z);
+					return agency[z]+" "+"amount is "+formatAmount(agencyarray[z]);
+					
+					
+				       					});
+				})
+				.on("mouseout",function(d){});
+		    
+		   
+			//Labels
+
+		/*	arcs.append("text")
+			    .attr("transform", function(d) {
+			    	return "translate(" + arc.centroid(d) + ")";
+			    })
+			    .attr("text-anchor", "middle")
+			   .text(function(d, i) {
+			    	return sector[i];//*******************************************************************************************
+			   });*/
+			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
+//--------------------------------------text&border------------------------------------------------------------------------------------
+var circleData=[];
+var svg = d3.select("#info")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", 1.7*h);
+var text = svg.selectAll("text")
+                       .data(circleData)
+                        .enter()
+                      .append("text");
+var textLabels = text
+                 .attr("x", w/2)
+                 .attr("y", 1.5*h)
+                 .text( "more more more")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", "20px")
+                 .attr("fill", "red");
+				
+	
 
 			//Labels
 
