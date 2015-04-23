@@ -208,7 +208,7 @@ var sector=["Family Planning and Reproductive Health","HIV/AIDS","Health - Gener
 			var pie = d3.layout.pie();
 
 			//Easy colors accessible via a 10-step ordinal scale
-			var color = d3.scale.category20c();
+			var color = d3.scale.category10();
 
 			//Create SVG element
 			var svg = d3.select("#info")
