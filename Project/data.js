@@ -274,11 +274,46 @@ var clk = function(c){
 
 			//d3.selectAll("svg").exit().remove();
       //Draw arc paths
-			arcs.append("path")
+						arcs.append("path")
 			    .attr("fill", function(d, i) {
 			    	return color(i);
 			    })
-			    .attr("d", arc);
+			    .attr("d", arc)
+				.attr("xxx",category[i])
+				
+			.on("mouseover",function(d,z){
+				d3.select(this)
+				.append("svg:title")
+				.style("font-size","30px")
+				.text(function(i){
+					
+					console.log(z);
+					return category[z]+" "+"amount is "+formatAmount(catarray[z]);
+					
+					
+				       					});
+				})
+				.on("mouseout",function(d){});
+		    
+		   
+		
+//--------------------------------------text&border------------------------------------------------------------------------------------
+var circleData=[];
+var svg = d3.select("#info")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", 1.7*h);
+var text = svg.selectAll("text")
+                       .data(circleData)
+                        .enter()
+                      .append("text");
+var textLabels = text
+                 .attr("x", w/2)
+                 .attr("y", 1.5*h)
+                 .text( "more more more")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", "20px")
+                 .attr("fill", "red");
 
 			//Labels
 
