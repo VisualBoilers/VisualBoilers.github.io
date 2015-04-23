@@ -228,9 +228,24 @@ var clk = function(c){
 			    .attr("fill", function(d, i) {
 			    	return color(i);
 			    })
-			    .attr("d", arc);
+			    .attr("d", arc)
+				.attr("xxx",sector[i])
+				
+			.on("mouseover",function(d,z){
+				d3.select(this)
+				.append("svg:title")
+				.style("font-size","30px")
+				.text(function(i){
+					
+					console.log(z);
+					return sector[z]+" "+"amount is "+formatAmount(sectorarray[z]);
+					
+					
+				       					});
+				})
+				.on("mouseout",function(d){});
 
-			//Labels
+	/*		//Labels
 
 			arcs.append("text")
 			    .attr("transform", function(d) {
@@ -239,7 +254,7 @@ var clk = function(c){
 			    .attr("text-anchor", "middle")
 			   .text(function(d, i) {
 			    	return sector[i];//*******************************************************************************************
-			   });
+			   });*/
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 //--------------------------------------text&border------------------------------------------------------------------------------------
 var svg = d3.select("#info")
