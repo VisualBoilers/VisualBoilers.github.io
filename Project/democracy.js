@@ -232,15 +232,22 @@ var clk = function(c){
 
 			//d3.selectAll("svg").exit().remove();
       //Draw arc paths
+	  var z=-1;
+	  
 			arcs.append("path")
 			    .attr("fill", function(d, i) {
 			    	return color(i);
 			    })
 			    .attr("d", arc)
+				.attr("id",sector[i])
+				
 			.on("mouseover",function(d){
 				d3.select(this)
 				.append("svg:title")
-				.text(function(d,i){return sector[i];});
+				.text(function(d){
+				
+					return d.id;
+				       					});
 				})
 				.on("mouseout",function(d){});
 		    
