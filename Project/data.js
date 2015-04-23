@@ -223,14 +223,14 @@ var textLabels = text
 
 			//Labels
 
-			arcs.append("text")
+		/*	arcs.append("text")
 			    .attr("transform", function(d) {
 			    	return "translate(" + arc.centroid(d) + ")";
 			    })
 			    .attr("text-anchor", "middle")
 			   .text(function(d, i) {
 			    	return agency[i];//*******************************************************************************************
-			   });
+			   });*/
 
 		/*	   svg.append("text")
 			   .attr("x", w/2)
@@ -349,7 +349,7 @@ var circleData=[];
 var svg = d3.select("#info")
 						.append("svg")
 						.attr("width", w)
-						.attr("height", 1*h);
+						.attr("height", 0.7*h);
 var text = svg.selectAll("text")
                        .data(circleData)
                         .enter()
@@ -364,14 +364,14 @@ var textLabels = text
 
 			//Labels
 
-			arcs.append("text")
+		/*	arcs.append("text")
 			    .attr("transform", function(d) {
 			    	return "translate(" + arc.centroid(d) + ")";
 			    })
 			    .attr("text-anchor", "middle")
 			   .text(function(d, i) {
 			    	return category[i];//*******************************************************************************************
-			   });
+			   });*/
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 
 };
