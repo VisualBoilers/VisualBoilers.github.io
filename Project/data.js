@@ -202,7 +202,7 @@ var clk = function(c){
 			   });*/
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 //--------------------------------------text&border------------------------------------------------------------------------------------
-var circleData=[];
+/*var circleData=[];
 var svg = d3.select("#info")
 						.append("svg")
 						.attr("width", w)
@@ -218,7 +218,7 @@ var textLabels = text
                  .attr("font-family", "sans-serif")
                  .attr("font-size", "20px")
                  .attr("fill", "red");
-				
+				*/
 	
 
 			//Labels
