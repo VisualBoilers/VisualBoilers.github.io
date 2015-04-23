@@ -209,7 +209,7 @@ var clk = function(c){
 			var pie = d3.layout.pie();
 
 			//Easy colors accessible via a 10-step ordinal scale
-			var color = d3.scale.category20c();
+			var color = d3.scale.category10();
 
 			//Create SVG element
 			var svg = d3.select("#info")
@@ -258,14 +258,14 @@ var clk = function(c){
 		   
 			//Labels
 
-			arcs.append("text")
+		/*	arcs.append("text")
 			    .attr("transform", function(d) {
 			    	return "translate(" + arc.centroid(d) + ")";
 			    })
 			    .attr("text-anchor", "middle")
 			   .text(function(d, i) {
 			    	return sector[i];//*******************************************************************************************
-			   });
+			   });*/
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 //--------------------------------------text&border------------------------------------------------------------------------------------
 var circleData=[];
