@@ -241,12 +241,13 @@ var clk = function(c){
 			    .attr("d", arc)
 				.attr("xxx",sector[i])
 				
-			.on("mouseover",function(d){
+			.on("mouseover",function(d,i){
 				d3.select(this)
 				.append("svg:title")
-				.text(function(d){
-				
-					return this.xxx;
+				.text(function(d,i){
+					z++;
+					return sector[z];
+					
 				       					});
 				})
 				.on("mouseout",function(d){});
