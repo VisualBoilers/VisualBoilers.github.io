@@ -244,10 +244,10 @@ var clk = function(c){
 			.on("mouseover",function(d,z){
 				d3.select(this)
 				.append("svg:title")
-				.text(function(z,i){
-					i++;
-					console.log(i);
-					return sector[i];
+				.text(function(i){
+					
+					console.log(z);
+					return sector[z];
 					
 				       					});
 				})
