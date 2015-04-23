@@ -239,14 +239,14 @@ var clk = function(c){
 			    	return color(i);
 			    })
 			    .attr("d", arc)
-				.attr("id",sector[i])
+				.attr("xxx",sector[i])
 				
 			.on("mouseover",function(d){
 				d3.select(this)
 				.append("svg:title")
 				.text(function(d){
 				
-					return d.id;
+					return this.xxx;
 				       					});
 				})
 				.on("mouseout",function(d){});
