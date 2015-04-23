@@ -247,7 +247,8 @@ var clk = function(c){
 				.text(function(i){
 					
 					console.log(z);
-					return sector[z];
+					return sector[z]+"amount is "+sectorarray[z];
+					
 					
 				       					});
 				})
