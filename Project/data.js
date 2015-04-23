@@ -349,7 +349,7 @@ var circleData=[];
 var svg = d3.select("#info")
 						.append("svg")
 						.attr("width", w)
-						.attr("height", 1.7*h);
+						.attr("height", 1*h);
 var text = svg.selectAll("text")
                        .data(circleData)
                         .enter()
