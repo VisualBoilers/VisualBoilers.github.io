@@ -245,8 +245,9 @@ var clk = function(c){
 				d3.select(this)
 				.append("svg:title")
 				.text(function(d,i){
-					z++;
-					return sector[z];
+					//z++;
+					console.log(i);
+					return sector[i];
 					
 				       					});
 				})
