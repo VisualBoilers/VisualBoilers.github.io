@@ -244,6 +244,7 @@ var clk = function(c){
 			.on("mouseover",function(d,z){
 				d3.select(this)
 				.append("svg:title")
+				.style("font-size","30px")
 				.text(function(i){
 					
 					console.log(z);
