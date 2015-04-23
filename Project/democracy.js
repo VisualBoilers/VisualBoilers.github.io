@@ -2,6 +2,7 @@
 Country.draw("#countrysvg");
 var data;
 var CurrentCountry=0;
+//var sector=["Civil Society","Good Governance","Political Competition and Consensus-Building","Rule of Law and Human Rights"];
 var clk = function(c){
 
   var countryarray = [];
@@ -208,13 +209,18 @@ var clk = function(c){
 			var pie = d3.layout.pie();
 
 			//Easy colors accessible via a 10-step ordinal scale
-			var color = d3.scale.category20c();
+			var color = d3.scale.category10();
 
 			//Create SVG element
 			var svg = d3.select("#info")
 						.append("svg")
 						.attr("width", w)
-						.attr("height", h);
+						.attr("height", h)
+						.attr("id","pie");
+						
+			d3.selectAll("#pie").append("text")
+						.attr("id","tool");
+			
 
 			//Set up groups
 			var arcs = svg.selectAll("g.arc")
@@ -226,32 +232,51 @@ var clk = function(c){
 
 			//d3.selectAll("svg").exit().remove();
       //Draw arc paths
+	 // var z=-1;
+	  
 			arcs.append("path")
 			    .attr("fill", function(d, i) {
 			    	return color(i);
 			    })
-			    .attr("d", arc);
-
+			    .attr("d", arc)
+				.attr("xxx",sector[i])
+				
+			.on("mouseover",function(d,z){
+				d3.select(this)
+				.append("svg:title")
+				.style("font-size","30px")
+				.text(function(i){
+					
+					console.log(z);
+					return sector[z]+" "+"amount is "+formatAmount(sectorarray[z]);
+					
+					
+				       					});
+				})
+				.on("mouseout",function(d){});
+		    
+		   
 			//Labels
 
-			arcs.append("text")
+		/*	arcs.append("text")
 			    .attr("transform", function(d) {
 			    	return "translate(" + arc.centroid(d) + ")";
 			    })
 			    .attr("text-anchor", "middle")
 			   .text(function(d, i) {
 			    	return sector[i];//*******************************************************************************************
-			   });
+			   });*/
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
 //--------------------------------------text&border------------------------------------------------------------------------------------
+var circleData=[];
 var svg = d3.select("#info")
 						.append("svg")
 						.attr("width", w)
 						.attr("height", 1.7*h);
 var text = svg.selectAll("text")
-                        .data(circleData)
+                       .data(circleData)
                         .enter()
-                        .append("text");
+                      .append("text");
 var textLabels = text
                  .attr("x", w/2)
                  .attr("y", 1.5*h)
