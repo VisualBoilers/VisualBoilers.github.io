@@ -232,7 +232,7 @@ var clk = function(c){
 
 			//d3.selectAll("svg").exit().remove();
       //Draw arc paths
-	  var z=-1;
+	 // var z=-1;
 	  
 			arcs.append("path")
 			    .attr("fill", function(d, i) {
@@ -241,10 +241,10 @@ var clk = function(c){
 			    .attr("d", arc)
 				.attr("xxx",sector[i])
 				
-			.on("mouseover",function(d,i){
+			.on("mouseover",function(d,z){
 				d3.select(this)
 				.append("svg:title")
-				.text(function(d,i){
+				.text(function(z,i){
 					//z++;
 					console.log(i);
 					return sector[i];
