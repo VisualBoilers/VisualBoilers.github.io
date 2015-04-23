@@ -55,8 +55,11 @@
 	top:600px;
     left: 40px;
 }
+.prightAside.td{
+  margin:-2px;
+}
 
-td, tr {   
+td, tr {
     height: 22px;
 }
 table {
@@ -69,6 +72,7 @@ table {
 <h6> Data courtesy of <a href="http://foreignassistance.gov/web/DataView.aspx">ForeignAssistance.gov</a></h6>
 <head>
   <link rel="stylesheet" type="text/css" href="theme.css">
+  <link rel="stylesheet" type="text/css" href="legendstyle.css">
   <script src="map.js"></script><!-- creates worldmap -->
   <script src="http://d3js.org/d3.v3.min.js"></script>
 
@@ -107,7 +111,7 @@ table {
  <input type="button" style="font-size: 12; background-color:#a19c9c" value="Multi-Sector" onclick="location.href='http://visualboilers.github.io/Project/multi.html';">
  <input type="button" style="font-size: 12" value="Peace and Security" onclick="location.href='http://visualboilers.github.io/Project/peace.html';">
  <input type="button" style="font-size: 12" value="Program Management" onclick="location.href='http://visualboilers.github.io/Project/program.html';">
-  
+
 <svg width="1020" height="680" id="countrysvg"></svg> <!-- svg to hold the map. -->
 
 <div id= "info" width="500" height = "500" float = left></div>
@@ -138,11 +142,35 @@ table {
 		  </tr>
 		</table>
 	</div>
-</div>  
-<div id="fb" style="clear: both; width: 600px; margin: 0pt auto;">   
+</div>
+<div class="plegend">
+	<div class="pleftWrapper">
+	   <div class="p1"></div>
+	   <div class="p2"></div>
+	   <div class="p3"></div>
+	</div>
+	<div class="prightAside">
+		<table>
+		  <tr>
+			<td>Debt Relief</td>
+		  </tr>
+			<tr>
+			<td>International Contributions</td>
+		  </tr>
+			<tr>
+			<td>Multi-Sector - Unspecified</td>
+		  </tr>
+      <tr>
+      <td></td>
+      </tr>
+		</table>
+	</div>
+</div>
+
+<div id="fb" style="clear: both; width: 600px; margin: 0pt auto;">
 <div class="fb-comments" data-href="http://visualboilers.github.io/Project/project.html" data-width="600" data-numposts="5" data-colorscheme="light"></div>
 </div>
-  
+
 </body>
 <script src="multi.js"></script>
 </html>

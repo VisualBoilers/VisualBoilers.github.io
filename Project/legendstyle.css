@@ -1,0 +1,90 @@
+.pleftWrapper {
+    float:right;
+    width: 25px;
+    height: 120px;
+	position:absolute;
+	top:600px;
+	left: 1050px;
+}
+
+.p1 {
+    background-color: #1f77b4;
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+    border: 1px solid black;
+}
+.p2 {
+    background-color: #ff7f0e;
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+    border: 1px solid black;
+}
+.p3 {
+    background-color: #2ca02c;
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+    border: 1px solid black;
+}
+.p4 {
+    background-color: #d62728;
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+    border: 1px solid black;
+
+}
+.p5 {
+    background-color: #9467bd;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    border: 1px solid black;
+}
+.p6 {
+    background-color: #8c564b;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    border: 1px solid black;
+}
+.p7 {
+    background-color: #e377c2;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    border: 1px solid black;
+}
+.p8 {
+    background-color: #7f7f7f;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    border: 1px solid black;
+}
+.p9 {
+    background-color: #bcbd22;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    border: 1px solid black;
+}
+.p10 {
+    background-color: #17becf;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    border: 1px solid black;
+}
+
+.prightAside {
+    color: black;
+    width: 350px;
+    height: 300px;
+    /*display: inline-block;*/
+	position:absolute;
+	top:595px;
+  left: 1085px;
+}

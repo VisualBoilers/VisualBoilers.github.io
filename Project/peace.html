@@ -12,28 +12,28 @@
     background-color: rgba(255, 52, 179,1.0);
     width: 20px;
     height: 20px;
-    margin-top: 2px;
+    margin-top: 5px;
     border: 1px solid black;
 }
 #l2 {
     background-color: rgba(255, 52, 179,.75);
     width: 20px;
     height: 20px;
-    margin-top: 2px;
+    margin-top: 5px;
     border: 1px solid black;
 }
 #l3 {
     background-color: rgba(255, 52, 179,.5);
     width: 20px;
     height: 20px;
-    margin-top: 2px;
+    margin-top: 5px;
     border: 1px solid black;
 }
 #l4 {
     background-color: rgba(255, 52, 179,.25);
     width: 20px;
     height: 20px;
-    margin-top: 2px;
+    margin-top: 5px;
     border: 1px solid black;
 
 }
@@ -41,7 +41,7 @@
     background-color: rgba(255, 52, 179,.0);
     width: 20px;
     height: 20px;
-    margin-top: 2px;
+    margin-top: 5px;
     border: 1px solid black;
 }
 
@@ -56,8 +56,8 @@
     left: 40px;
 }
 
-td, tr {   
-    height: 22px;
+td, tr {
+    height: 25px;
 }
 table {
 	height: 120px;
@@ -69,6 +69,7 @@ table {
 <h6> Data courtesy of <a href="http://foreignassistance.gov/web/DataView.aspx">ForeignAssistance.gov</a></h6>
 <head>
   <link rel="stylesheet" type="text/css" href="theme.css">
+  <link rel="stylesheet" type="text/css" href="legendstyle.css">
   <script src="map.js"></script><!-- creates worldmap -->
   <script src="http://d3js.org/d3.v3.min.js"></script>
 
@@ -107,7 +108,7 @@ table {
  <input type="button" style="font-size: 12" value="Multi-Sector" onclick="location.href='http://visualboilers.github.io/Project/multi.html';">
  <input type="button" style="font-size: 12; background-color:#a19c9c" value="Peace and Security" onclick="location.href='http://visualboilers.github.io/Project/peace.html';">
  <input type="button" style="font-size: 12" value="Program Management" onclick="location.href='http://visualboilers.github.io/Project/program.html';">
-  
+
 <svg width="1020" height="680" id="countrysvg"></svg> <!-- svg to hold the map. -->
 
 <div id= "info" width="500" height = "500" float = left></div>
@@ -138,11 +139,44 @@ table {
 		  </tr>
 		</table>
 	</div>
-</div>  
-<div id="fb" style="clear: both; width: 600px; margin: 0pt auto;">   
+</div>
+<div class="plegend">
+	<div class="pleftWrapper">
+	   <div class="p1"></div>
+	   <div class="p2"></div>
+	   <div class="p3"></div>
+	   <div class="p4"></div>
+     <div class="p5"></div>
+     <div class="p6"></div>
+	</div>
+	<div class="prightAside">
+		<table>
+		  <tr>
+			<td>Combating Weapons of Mass Destruction (WMD)</td>
+		  </tr>
+			<tr>
+			<td>Conflict Mitigation and Reconciliation</td>
+		  </tr>
+			<tr>
+			<td>Counter-Narcotics</td>
+		  </tr>
+		  <tr>
+			<td>Counterterrorism</td>
+		  </tr>
+      <tr>
+      <td>Stabilization Operations and Security Sector Reform</td>
+      </tr>
+      <tr>
+      <td>Transnational Crime</td>
+      </tr>
+		</table>
+	</div>
+</div>
+
+<div id="fb" style="clear: both; width: 600px; margin: 0pt auto;">
 <div class="fb-comments" data-href="http://visualboilers.github.io/Project/project.html" data-width="600" data-numposts="5" data-colorscheme="light"></div>
 </div>
-  
+
 </body>
 <script src="peace.js"></script>
 </html>
