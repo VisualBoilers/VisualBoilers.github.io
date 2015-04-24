@@ -18,12 +18,12 @@ var clk = function(c){
     }
   });
 
-  
+
   //console.log(sortedAgencyArray);
   var firstyear = 2005;
   var firstagency="DOS";
   var firstcat="Democracy, Human Rights, and Governance";
-  
+
   var firstsector="Agriculture";//***********************************************************
   var yearamount = 0;
   var agencyamount =0;
@@ -42,7 +42,7 @@ var clk = function(c){
    var sortedYearArray= countryarray.sort(function(a,b){
     return d3.ascending(a[0], b[0]);
   });
-  
+
   sortedYearArray.forEach(function(d){
     if(d[0] == firstyear)
     {
@@ -62,11 +62,11 @@ var clk = function(c){
 
   });
   yeararray.push(yearamount);
-  
+
   //--------------------------------------------agency array------------------------------------------------
     var sortedAgencyArray= countryarray.sort(function(a,b){
     return d3.ascending(a[1], b[1]);
-	
+
   });
   console.log(sortedAgencyArray);
    sortedAgencyArray.forEach(function(d){
@@ -101,7 +101,7 @@ var clk = function(c){
     var sortedCategoryArray= countryarray.sort(function(a,b){
     return d3.ascending(a[4], b[4]);
   });
-  
+
    sortedCategoryArray.forEach(function(d){
     if(d[4] === firstcat)
     {
@@ -144,7 +144,7 @@ var clk = function(c){
    else{q=q;}
    }
    console.log(extractCataNew);
-   
+
  var sortedSectorArray= extractCataNew.sort(function(a,b){
     return d3.ascending(a[5], b[5]);
   });
@@ -177,10 +177,10 @@ var clk = function(c){
 
   });
   sectorarray.push(sectoramount);
-   
-   
+
+
   //-------------------------------------------total number--------------------------
-  
+
    var w = 240;
 			var h = 240;
   var svg = d3.select("#info")
@@ -193,7 +193,7 @@ var clk = function(c){
 			   .attr("text-anchor", "middle")
 			   .style("font-size", "24px")
 			   .text("The total amount is "+formatAmount(d3.sum(sectorarray),2))
-			   
+
 //-----------------------------sector pie--------------------------------------
   var w = 240;
 			var h = 240;
@@ -230,17 +230,17 @@ var clk = function(c){
 			    })
 			    .attr("d", arc)
 				.attr("xxx",sector[i])
-				
+
 			.on("mouseover",function(d,z){
 				d3.select(this)
 				.append("svg:title")
 				.style("font-size","30px")
 				.text(function(i){
-					
+
 					console.log(z);
 					return sector[z]+" "+"amount is "+formatAmount(sectorarray[z]);
-					
-					
+
+
 				       					});
 				})
 				.on("mouseout",function(d){});
@@ -274,7 +274,7 @@ var textLabels = text
                  .attr("fill", "red");
 
 
-			
+
 
 
 };
@@ -285,7 +285,7 @@ d3.json("rightdata.json", function(json) {
   var firstname = "AE";
   var firstcat="Economic Development";
   var amount = 0;
-  
+
   data.sort( function(a,b) {
 		if (a[7] == b[7])
 			return a[4] < b[4] ? -1 : 1;
@@ -299,7 +299,7 @@ d3.json("rightdata.json", function(json) {
 				//console.log(amount);
 			//console.log(firstname);
 			}
-		
+
 			else {
 				console.log(amount); //Noah need to move else (the one below this) so that it can look for diff categories for each country
 			}
@@ -331,7 +331,7 @@ d3.json("rightdata.json", function(json) {
 			//console.log(firstname);
 			}
 			else {
-				amount = 0; 
+				amount = 0;
 				}
 			}
 		}
