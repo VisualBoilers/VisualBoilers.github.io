@@ -137,7 +137,7 @@ var clk = function(c){
 			   .attr("y", 0)
 			   .attr("text-anchor", "middle")
 			   .style("font-size", "24px")
-			   .text("The total amount is "+formatAmount(d3.sum(yeararray),2))
+			   .text("Total Amount: "+formatAmount(d3.sum(yeararray),2))
 //----------------------------------agency pie--------------------------------------------------------------------------------------
 /*  var w = 240;
 			var h = 240;
@@ -349,7 +349,7 @@ var circleData=[];
 var svg = d3.select("#info")
 						.append("svg")
 						.attr("width", w)
-						.attr("height", 0.7*h);
+						.attr("height", 1.6*h);
 var text = svg.selectAll("text")
                        .data(circleData)
                         .enter()

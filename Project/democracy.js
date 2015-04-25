@@ -131,7 +131,7 @@ var clk = function(c){
 
   });
   catarray.push(catamount);
-    ///------------------------------------------try sector-----------------------------
+ /////------------------------------------------try sector-----------------------------
  var extractCata=[];//restore********************************************************************************
  extractCata=sortedCategoryArray;
  console.log(extractCata[1]);
@@ -193,7 +193,7 @@ var clk = function(c){
 			   .attr("y", 0)
 			   .attr("text-anchor", "middle")
 			   .style("font-size", "24px")
-			   .text("The total amount is "+formatAmount(d3.sum(sectorarray),2))
+			   .text("Sector Amount: "+formatAmount(d3.sum(sectorarray),2))
 			   
 	  
 			   
