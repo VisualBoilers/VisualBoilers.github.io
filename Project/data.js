@@ -373,6 +373,27 @@ var textLabels = text
 			    	return category[i];//*******************************************************************************************
 			   });*/
 			//.text(year[i]); //each time creat a piece, add the lable by increasing i?
+			var circleData=[];
+var svg = d3.select("#info")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", 1.7*h);
+var text = svg.selectAll("text")
+                       .data(circleData)
+                        .enter()
+                      .append("text");
+var textLabels = text
+                 .attr("x", w/2)
+                 .attr("y", 1.5*h)
+                 .text( "more more more")
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", "20px")
+                 .attr("fill", "red");
+
+
+
+};
+			
 
 };
 
