@@ -106,10 +106,10 @@ var clk = function(c){
       catarray.push(catamount);
 	  j=j+1;
       firstcat = category[j];
-	  console.log(category[j]);
-	  console.log(firstcat);
-	  console.log(d[4]);
-	  console.log(i);
+	 // console.log(category[j]);
+	  //console.log(firstcat);
+	  //console.log(d[4]);
+	  //console.log(i);
       while(d[4] !== firstcat)
       {
         catarray.push(0);
@@ -139,7 +139,7 @@ var clk = function(c){
 			   .style("font-size", "24px")
 			   .text("The total amount is "+formatAmount(d3.sum(yeararray),2))
 //----------------------------------agency pie--------------------------------------------------------------------------------------
-  var w = 240;
+/*  var w = 240;
 			var h = 240;
 			var outerRadius = w / 2;
 			var innerRadius = 0;
@@ -174,22 +174,22 @@ var clk = function(c){
 			    })
 			    .attr("d", arc)
 				.attr("xxx",agency[i])
-				
+
 			.on("mouseover",function(d,z){
 				d3.select(this)
 				.append("svg:title")
 				.style("font-size","30px")
 				.text(function(i){
-					
+
 					console.log(z);
 					return agency[z]+" "+"amount is "+formatAmount(agencyarray[z]);
-					
-					
+
+
 				       					});
 				})
 				.on("mouseout",function(d){});
-		    
-		   
+
+
 			//Labels
 
 		/*	arcs.append("text")
@@ -219,7 +219,7 @@ var textLabels = text
                  .attr("font-size", "20px")
                  .attr("fill", "red");
 				*/
-	
+
 
 			//Labels
 
@@ -303,7 +303,7 @@ var textLabels = text
 			var pie = d3.layout.pie();
 
 			//Easy colors accessible via a 10-step ordinal scale
-			var color = d3.scale.category20c();
+			var color = d3.scale.category10();
 
 			//Create SVG element
 			var svg = d3.select("#info")
@@ -327,23 +327,23 @@ var textLabels = text
 			    })
 			    .attr("d", arc)
 				.attr("xxx",category[i])
-				
+
 			.on("mouseover",function(d,z){
 				d3.select(this)
 				.append("svg:title")
 				.style("font-size","30px")
 				.text(function(i){
-					
+
 					console.log(z);
 					return category[z]+" "+"amount is "+formatAmount(catarray[z]);
-					
-					
+
+
 				       					});
 				})
 				.on("mouseout",function(d){});
-		    
-		   
-		
+
+
+
 //--------------------------------------text&border------------------------------------------------------------------------------------
 var circleData=[];
 var svg = d3.select("#info")
