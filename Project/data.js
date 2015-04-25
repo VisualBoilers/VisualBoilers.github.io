@@ -395,8 +395,6 @@ var textLabels = text
 };
 			
 
-};
-
 d3.json("rightdata.json", function(json) {
 
   data = json;
