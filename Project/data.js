@@ -377,7 +377,7 @@ var textLabels = text
 var svg = d3.select("#info")
 						.append("svg")
 						.attr("width", w)
-						.attr("height", 0.6*h);
+						.attr("height", 0.4*h);
 var text = svg.selectAll("text")
                        .data(circleData)
                         .enter()
